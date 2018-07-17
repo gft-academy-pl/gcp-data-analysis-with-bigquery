@@ -55,7 +55,7 @@ https://cloud.google.com/functions/docs/concepts/overview
 
 ## Service accounts
 
-A service account is a special account that can be used by services and applications running on your Google Compute Engine instance to interact with other Google Cloud Platform APIs. Applications can use service account credentials to authorize themselves to a set of APIs and perform actions within the permissions granted to the service account and virtual machine instance. In addition, you can create firewall rules that allow or deny traffic to and from instances based on the service account that owns the instances.
+A service account is a special account that can be used by any services and applications to interact with other Google Cloud Platform APIs. Applications can use service account credentials to authorize themselves to Google APIs and perform actions within the permissions granted at the Google Cloud project level. In addition for Google Compute Engine, you can create firewall rules that allow or deny traffic to and from instances based on the service account that owns the instances.
 
 https://cloud.google.com/compute/docs/access/service-accounts
 
