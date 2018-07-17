@@ -5,8 +5,9 @@
 - Cloud Storage
 - gsutil 
 - Cloud Storage - exercises
-  - Create bucket
-  - Upload file 
+  - Define global variables
+  - Create 3 buckets
+  - Upload sample data
 
 ## Google Cloud storage options
 ![alt text][storage_options]
@@ -17,7 +18,7 @@
 
 ### Concept & Purpose
 
-Google Cloud Storage allows world-wide storage and retrieval of any amount of data at any time. You can use Google Cloud Storage for a range of scenarios including serving website content, storing data for archival and disaster recovery, or distributing large data objects to users via direct download ([Google documentation]).
+Google Cloud Storage allows world-wide storage and retrieval of any amount of data at any time. You can use it for a range of scenarios including serving website content (static content multimedia), storing data for archival and disaster recovery, or distributing large data objects to users via direct download ([Google documentation]).
 
 Widely accessible online disk space with pricing dependent on type, frequency of use and volume of the data, which is usually used to host static content and store cloud computation results.
 
@@ -41,10 +42,11 @@ Example usages of gsutil:
 More info can be found in [gsutil documentation](https://cloud.google.com/storage/docs/gsutil) and using `gsutil help`
 
 ## Cloud Storage - exercises
+We need to define buckets for:
  - for rate static data input
  - for daily batch trade data input
 
-### Global variables
+### Define global variables
 
 ```
 export GCP_INPUT_BUCKET=gft-academy-bq-input-${GOOGLE_CLOUD_PROJECT}
