@@ -22,7 +22,7 @@ Google Cloud Shell provides you with command-line access to your cloud resources
 
 When you start Cloud Shell, g1-small Google Compute Engine virtual machine running a Debian-based Linux operating system is provisioned for you (for free!). Cloud Shell instances are provisioned on a per-user, per-session basis. The instance persists while your Cloud Shell session is active and terminates after an hour of inactivity. 
 
-**Remember:** _Each time Cloud Shell is restarted you are loosing all of variables expoerted by you (until you put them to ~/.bashrc or ~/.bash_profile)!_
+**Remember:** _Each time Cloud Shell is restarted, you are loosing all of variables exported by you (until you put them into ~/.bashrc or ~/.bash_profile)!_
 
 ### Cloud shell editor
 
