@@ -1,10 +1,10 @@
-![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/cloud-functions-highlight.png?raw=true)
+![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/cloud-functions-highlight.png?raw=true)
 
 ## Agenda
 - Cloud functions
 - Service accounts
-- Dataflow notification / trigger
-- Function deployment (do not describe the js code) 
+- Dataflow trigger
+- Function deployment
 
 ## Cloud Functions 
 
@@ -12,32 +12,32 @@ Google Cloud Functions is a serverless execution environment for building and co
 
 Cloud Functions are written in Javascript and execute in a Node.js v6.14.0 environment on Google Cloud Platform. You can take your Cloud Function and run it in any standard Node.js runtime which makes both portability and local testing a breeze.
 
-**Serverless**
+### Serverless
 
 Cloud Functions removes the work of managing servers, configuring software, updating frameworks, and patching operating systems. The software and infrastructure are fully managed by Google so that you just add code. Furthermore, provisioning of resources happens automatically in response to events. This means that a function can scale from a few invocations a day to many millions of invocations without any work from you.
 
-**Events**
+### Events
 - HTTP—invoke functions directly via HTTP requests
 - Cloud Storage
 - Cloud Pub/Sub
 - Firebase (DB, Storage, Analytics, Auth)
 
-**Trigger**
+### Trigger
 - HTTP:	--trigger-http
 - Google Cloud Storage:	--trigger-bucket [BUCKET NAME]
 - Google Cloud Pub/Sub:	--trigger-topic [TOPIC NAME]
 
-**Concurrency**
+### Concurrency
 
 Cloud Functions may start multiple function instances to scale your function up to meet the current load. These instances run in parallel, which results in having more than one parallel function execution.
 
 However, each function instance handles only one concurrent request at a time. This means while your code is processing one request, there is no possibility of a second request being routed to the same function instance, and the original request can use the full amount of resources (CPU and memory) that you requested.
 
-**Stateless Functions**
+### Stateless Functions
 
 Cloud Functions implements the serverless paradigm, in which you just run your code without worrying about the underlying infrastructure, such as servers or virtual machines. To allow Google to automatically manage and scale the functions, they must be stateless—one function invocation should not rely on in-memory state set by a previous invocation. 
 
-**Execution Guarantees**
+### Execution Guarantees
 
 Your functions are typically invoked once for each incoming event. However, Cloud Functions does not guarantee a single invocation in all cases because of differences in error scenarios.
 
@@ -59,15 +59,15 @@ https://cloud.google.com/compute/docs/access/service-accounts
 
 ## Dataflow notification / trigger
 
-**Code**
-- Implementation: https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/cloud-functions/dataflow-notifications/index.js
+## Code
+- Implementation: https://github.com/gft-academy-pl/gcp--data-analysis-with-bigquery/blob/master/cloud-function/dataflow-trigger/index.js
 
 ```
-cd ~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications
+cd ~/gcp-data-analysis-with-bigquery/cloud-function/dataflow-trigger
 npm install
 ```
 
-**Generate config.json**
+### Generate config.json
 
 ```
 sed -i 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
@@ -76,48 +76,48 @@ sed -i 's/__WORKSPACE_BUCKET__/'"$GCP_WORKSPACE_BUCKET"'/' ./config.json
 cat config.json
  ```
  
-**Test API call with Application Default Credentials**
+### Test API call with Application Default Credentials
 
 ```
 npm run test-auth-default
 ```
 
-**Call API with System Account via JWT**
+### Call API with System Account via JWT
 
 ```
 # Create service account
-gcloud iam service-accounts create service-gft-academy-fraud --display-name "GFT Academy Fraud"
+gcloud iam service-accounts create service-gft-data-analysis --display-name "GFT Academy Fraud"
 
 # List service accounts
 gcloud iam service-accounts list
 
 # Generate key
 gcloud iam service-accounts keys create \
-    ~/gcp-anti-fraud-detector/cloud-functions/dataflow-notifications/jwt.keys.json \
-    --iam-account service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
+    ~/gcp-data-analysis-with-bigquery/cloud-function/dataflow-trigger/jwt.keys.json \
+    --iam-account service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
 
 # List keys
 gcloud iam service-accounts keys list \
-    --iam-account service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
+    --iam-account service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
 
 # Add service account roles
 gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
-    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.viewer
+    --member serviceAccount:service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.viewer
 
 gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
-    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.developer
+    --member serviceAccount:service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.developer
 	
 gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
-    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.worker
+    --member serviceAccount:service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.worker
 	
 gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
-    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.admin
+    --member serviceAccount:service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/dataflow.admin
 	
 gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
-    --member serviceAccount:service-gft-academy-fraud@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/storage.objectViewer
+    --member serviceAccount:service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/storage.objectViewer
 ```
 
-**Test with JWT**
+### Test with JWT
 
 ```
 npm run test-auth-jwt
