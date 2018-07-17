@@ -11,8 +11,8 @@
 
 Google Cloud Platform is a public cloud solution providing a set of product: compute, storage, database cloud AI, networking, identity & security. 
 
-https://cloud.google.com/ 
-http://console.cloud.google.com
+- https://cloud.google.com/ 
+- http://console.cloud.google.com
 
 ## Introduction to GCP shell and editor
 
