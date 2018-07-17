@@ -2,5 +2,5 @@
 
 ## Navigation
 
-- [Previous Step](./03-dataprep.md)
-- [Next Step](./05-cloud-functions.md)
+- [Previous Step](./02-bigquery.md)
+- [Next Step](./04-dataprep.md)

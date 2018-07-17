@@ -2,6 +2,6 @@
 
 ## Navigation
 
-- [Previous Step](./02-bigquery.md)
-- [Next Step](./04-data-studio.md)
+- [Previous Step](./03-data-studio.md)
+- [Next Step](./05-cloud-functions.md)
 
