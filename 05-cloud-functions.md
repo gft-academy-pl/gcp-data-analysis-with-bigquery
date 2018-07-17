@@ -59,7 +59,7 @@ A service account is a special account that can be used by services and applicat
 
 https://cloud.google.com/compute/docs/access/service-accounts
 
-## Dataflow notification / trigger
+## Dataflow trigger
 
 ### Code
 - Implementation: https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/cloud-function/dataflow-trigger/index.js
