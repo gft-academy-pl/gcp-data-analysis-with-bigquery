@@ -36,15 +36,15 @@ cloudshell edit 00-init.md
 
 ## Initialization / setup
 
-**Create dedicated project**
+#### Create dedicated project
 
 In order to easier clean resources create dedicated project and switch to it after creation.
 
-**Clean up**
+#### Clean up
 
 After the workshop is over, please delete the project as your account will be still billed for the bucket usage.
 
-**Clone repository**
+#### Clone repository
 
 ```
 cd ~
