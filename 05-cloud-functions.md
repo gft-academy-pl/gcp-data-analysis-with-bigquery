@@ -86,7 +86,7 @@ npm run test-auth-default
 
 ```
 # Create service account
-gcloud iam service-accounts create service-gft-data-analysis --display-name "GFT Academy Fraud"
+gcloud iam service-accounts create service-gft-data-analysis --display-name "GFT Data Analysis Trigger"
 
 # List service accounts
 gcloud iam service-accounts list
