@@ -1,14 +1,14 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/storage-highlight.png?raw=true)
 
 ## Agenda
-- Storage options
+- Google Cloud storage options
 - Cloud Storage
 - gsutil 
-- Storage - exercises
+- Cloud Storage - exercises
   - Create bucket
   - Upload file 
 
-## Storage options
+## Google Cloud storage options
 ![alt text][storage_options]
 
 [storage_options]: https://cloud.google.com/images/storage-options/flowchart.svg "https://cloud.google.com/images/storage-options/flowchart.svg"
@@ -40,21 +40,22 @@ Example usages of gsutil:
 
 More info can be found in [gsutil documentation](https://cloud.google.com/storage/docs/gsutil) and using `gsutil help`
 
-## Storage - exercises
- - for fraud detector data input
- - for fraud detector data output
+## Cloud Storage - exercises
+ - for rate static data input
+ - for daily batch trade data input
 
 ### Global variables
 
 ```
-export GCP_INPUT_BUCKET=gft-academy-fd-input-${GOOGLE_CLOUD_PROJECT}
-export GCP_OUTPUT_BUCKET=gft-academy-fd-output-${GOOGLE_CLOUD_PROJECT}
-export GCP_WORKSPACE_BUCKET=gft-academy-fd-workspace-${GOOGLE_CLOUD_PROJECT}
+export GCP_INPUT_BUCKET=gft-academy-bq-input-${GOOGLE_CLOUD_PROJECT}
+export GCP_OUTPUT_BUCKET=gft-academy-bq-output-${GOOGLE_CLOUD_PROJECT}
+export GCP_WORKSPACE_BUCKET=gft-academy-bq-workspace-${GOOGLE_CLOUD_PROJECT}
 ```
 
 ### Create 3 buckets
  
 ```
+TBD
 gsutil mb -c regional -l europe-west3 gs://${GCP_INPUT_BUCKET}
 gsutil mb -c regional -l europe-west3 gs://${GCP_OUTPUT_BUCKET}
 gsutil mb -c regional -l europe-west3 gs://${GCP_WORKSPACE_BUCKET}
@@ -68,8 +69,8 @@ gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GC
 
 ## Documentation & Resources
 - gsutils mb: https://cloud.google.com/storage/docs/gsutil/commands/mb 
-- bucket locations: https://cloud.google.com/storage/docs/bucket-locations
 - gsutils cp: https://cloud.google.com/storage/docs/gsutil/commands/cp
+- bucket locations: https://cloud.google.com/storage/docs/bucket-locations
 
 ## Navigation
 
