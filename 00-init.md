@@ -27,7 +27,7 @@ When you start Cloud Shell, g1-small Google Compute Engine virtual machine runni
 ### Cloud shell editor
 
 ```
-cloudshell edit filename
+cloudshell edit 00-init.md
 ```
 
 ## Project overview
