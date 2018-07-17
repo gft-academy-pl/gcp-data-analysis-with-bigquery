@@ -60,7 +60,7 @@ https://cloud.google.com/compute/docs/access/service-accounts
 ## Dataflow notification / trigger
 
 ### Code
-- Implementation: https://github.com/gft-academy-pl/gcp--data-analysis-with-bigquery/blob/master/cloud-function/dataflow-trigger/index.js
+- Implementation: https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/cloud-function/dataflow-trigger/index.js
 
 ```
 cd ~/gcp-data-analysis-with-bigquery/cloud-function/dataflow-trigger
