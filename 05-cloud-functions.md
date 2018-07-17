@@ -62,10 +62,10 @@ https://cloud.google.com/compute/docs/access/service-accounts
 ## Dataflow trigger
 
 ### Code
-- Implementation: https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/cloud-function/dataflow-trigger/index.js
+- Implementation: https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/cloud-functions/dataflow-trigger/index.js
 
 ```
-cd ~/gcp-data-analysis-with-bigquery/cloud-function/dataflow-trigger
+cd ~/gcp-data-analysis-with-bigquery/cloud-functions/dataflow-trigger
 npm install
 ```
 
@@ -95,7 +95,7 @@ gcloud iam service-accounts list
 
 # Generate key
 gcloud iam service-accounts keys create \
-    ~/gcp-data-analysis-with-bigquery/cloud-function/dataflow-trigger/jwt.keys.json \
+    ~/gcp-data-analysis-with-bigquery/cloud-functions/dataflow-trigger/jwt.keys.json \
     --iam-account service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
 
 # List keys
