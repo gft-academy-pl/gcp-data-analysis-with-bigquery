@@ -1,4 +1,4 @@
-![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/storage-highlight.png?raw=true)
+![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/storage-highlight.png?raw=true)
 
 ## Agenda
 - Google Cloud storage options
