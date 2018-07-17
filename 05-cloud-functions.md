@@ -135,6 +135,7 @@ gcloud beta functions deploy triggerDataflowFn --trigger-bucket=gs://${GCP_INPUT
 
 ## Documentation & Resources
 - https://cloud.google.com/functions/docs/
+- https://github.com/GoogleCloudPlatform/cloud-functions-emulator _(for development!!!)_
 - https://shinesolutions.com/2017/03/23/triggering-dataflow-pipelines-with-cloud-functions/ - with templates
 - https://cloud.google.com/blog/big-data/2016/04/scheduling-dataflow-pipelines-using-app-engine-cron-service-or-cloud-functions - with spawning processess
 - https://cloud.google.com/dataflow/docs/templates/executing-templates#using-the-google-api-client-libraries
