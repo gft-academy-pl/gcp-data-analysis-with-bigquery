@@ -20,7 +20,9 @@ http://console.cloud.google.com
 
 Google Cloud Shell provides you with command-line access to your cloud resources directly from your browser. You can easily manage your projects and resources without having to install the Google Cloud SDK or other tools on your system. With Cloud Shell, the Cloud SDK gcloud command-line tool and other utilities you need are always available, up to date and fully authenticated.
 
-When you start Cloud Shell, g1-small Google Compute Engine virtual machine running a Debian-based Linux operating system is provisioned for you (for free!). Cloud Shell instances are provisioned on a per-user, per-session basis. The instance persists while your Cloud Shell session is active and terminates after an hour of inactivity. **Remember:** _Each time Cloud Shell is restarted you are loosing all of variables expoerted by you (until you put them to ~/.bashrc or ~/.bash_profile)!_
+When you start Cloud Shell, g1-small Google Compute Engine virtual machine running a Debian-based Linux operating system is provisioned for you (for free!). Cloud Shell instances are provisioned on a per-user, per-session basis. The instance persists while your Cloud Shell session is active and terminates after an hour of inactivity. 
+
+**Remember:** _Each time Cloud Shell is restarted you are loosing all of variables expoerted by you (until you put them to ~/.bashrc or ~/.bash_profile)!_
 
 ### Cloud shell editor
 
