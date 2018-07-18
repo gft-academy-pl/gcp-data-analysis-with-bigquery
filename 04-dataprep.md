@@ -3,7 +3,7 @@
 ## Cloud Dataprep
 
 ### Concept & Purpose
-*Cloud Dataprep* is tool which allows You to import data from external source (CSV, JSON etc.), cleanse, transform and enrich them according to Your project's needs.
+*Cloud Dataprep* is tool developed and managed by **Trifacta**, which allows You to import data from external source (CSV, JSON etc.), cleanse, transform and enrich them according to Your project's needs.
 For example, it can be used to transform traffic data of Your application into proper spreadsheet/table, perform deep analysis on them and prepare them to be stored in database engine.
 
 ### Dataprep Workflow
