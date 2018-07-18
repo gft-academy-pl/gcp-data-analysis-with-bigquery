@@ -6,7 +6,7 @@
 - gsutil 
 - Cloud Storage - exercises
   - Define global variables
-  - Create 3 buckets
+  - Create 2 buckets
   - Upload sample data
 
 ## Google Cloud storage options
@@ -43,30 +43,28 @@ More info can be found in [gsutil documentation](https://cloud.google.com/storag
 
 ## Cloud Storage - exercises
 We need to define buckets for:
- - for rate static data input
- - for daily batch trade data input
+ - rate static data input
+ - daily batch trade data input
 
 ### Define global variables
 
 ```
-export GCP_INPUT_BUCKET=gft-academy-bq-input-${GOOGLE_CLOUD_PROJECT}
-export GCP_OUTPUT_BUCKET=gft-academy-bq-output-${GOOGLE_CLOUD_PROJECT}
-export GCP_WORKSPACE_BUCKET=gft-academy-bq-workspace-${GOOGLE_CLOUD_PROJECT}
+export GCP_INPUT_BUCKET=${GOOGLE_CLOUD_PROJECT}-input
+export GCP_TEMP_BUCKET=${GOOGLE_CLOUD_PROJECT}-temp
 ```
 
-### Create 3 buckets
+### Create 2 buckets
  
 ```
-TBD
-gsutil mb -c regional -l europe-west3 gs://${GCP_INPUT_BUCKET}
-gsutil mb -c regional -l europe-west3 gs://${GCP_OUTPUT_BUCKET}
-gsutil mb -c regional -l europe-west3 gs://${GCP_WORKSPACE_BUCKET}
+gsutil mb -c regional -l us-central1 gs://${GCP_INPUT_BUCKET}
+gsutil mb -c regional -l us-central1 gs://${GCP_TEMP_BUCKET}
 ```
 
 ### Upload sample data
 
 ```
-gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
+gsutil -m cp -r gs://gft-academy-fraud-detector-public-data/trades gs://${GCP_INPUT_BUCKET}
+gsutil -m cp -r gs://gft-academy-fraud-detector-public-data/rates gs://${GCP_INPUT_BUCKET}
 ```
 
 ## Documentation & Resources
