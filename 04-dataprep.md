@@ -7,7 +7,7 @@
 For example, it can be used to transform traffic data of Your application into proper spreadsheet/table, perform deep analysis on them and prepare them to be stored in database engine.
 
 ### Dataprep Workflow
-![Application Flow] (https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_appflow.png)
+![Application Flow](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_appflow.png)
 
 Above image illustrates the most common workflow of *Cloud Dataprep* usage - dataprep job.
 It can be also described as following steps:
