@@ -1,0 +1,15 @@
+{
+  "name": "gcp-data-analysis-dataflow-notifications",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-auth-default": "node authorizedDataFlowApiCallWithDefaultCredentials.test.js",
+	"test-auth-jwt": "node authorizedDataFlowApiCallWithJWT.test.js"
+  },
+  "author": "srlz & e-plkk & jjni & prki",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^28.1.0"
+  }
+}

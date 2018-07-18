@@ -1,0 +1,6 @@
+{
+  "INPUT_BUCKET": "__INPUT__",
+  "TEMP_BUCKET": "__TEMP__",
+  "OUTPUT_LOCATION": "__OUTPUT__",
+  "TEMPLATE_LOCATION": "__TEMPLATE__"
+}
