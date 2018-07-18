@@ -6,7 +6,7 @@
 - gsutil 
 - Cloud Storage - exercises
   - Define global variables
-  - Create 3 buckets
+  - Create 2 buckets
   - Upload sample data
 
 ## Google Cloud storage options
@@ -53,7 +53,7 @@ export GCP_INPUT_BUCKET=${GOOGLE_CLOUD_PROJECT}-input
 export GCP_TEMP_BUCKET=${GOOGLE_CLOUD_PROJECT}-temp
 ```
 
-### Create 3 buckets
+### Create 2 buckets
  
 ```
 gsutil mb -c regional -l us-central1 gs://${GCP_INPUT_BUCKET}
