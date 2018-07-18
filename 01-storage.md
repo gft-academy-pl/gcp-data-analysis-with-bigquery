@@ -43,8 +43,8 @@ More info can be found in [gsutil documentation](https://cloud.google.com/storag
 
 ## Cloud Storage - exercises
 We need to define buckets for:
- - for rate static data input
- - for daily batch trade data input
+ - rate static data input
+ - daily batch trade data input
 
 ### Define global variables
 
