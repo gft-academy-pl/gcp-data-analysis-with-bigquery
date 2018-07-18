@@ -63,7 +63,8 @@ gsutil mb -c regional -l us-central1 gs://${GCP_TEMP_BUCKET}
 ### Upload sample data
 
 ```
-gsutil cp gs://gft-academy-fraud-detector-public-data/trades-small.csv gs://${GCP_INPUT_BUCKET}
+gsutil -m cp -r gs://gft-academy-fraud-detector-public-data/trades gs://${GCP_INPUT_BUCKET}
+gsutil -m cp -r gs://gft-academy-fraud-detector-public-data/rates gs://${GCP_INPUT_BUCKET}
 ```
 
 ## Documentation & Resources
