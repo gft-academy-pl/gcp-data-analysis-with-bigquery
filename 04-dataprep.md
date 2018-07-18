@@ -1,8 +1,6 @@
 ## Agenda
 
 ## Cloud Dataprep
-### Dataprep Workflow
-![Application Flow](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_appflow.png)
 
 ### Concept & Purpose
 *Cloud Dataprep* is tool which allows You to import data from external source (CSV, JSON etc.), cleanse, transform and enrich them according to Your project's needs.
@@ -27,7 +25,7 @@ You can think of transforming raw data info table as of brewing Your homemade be
 
 Typically, *Recipe* looks more or less lke this:
 
-![Recipe Example] (https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_recipe.png)
+![Recipe Example](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_recipe.png)
 
 
 ## Navigation
