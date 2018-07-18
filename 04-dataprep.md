@@ -25,7 +25,7 @@ You can think of transforming raw data info table as of brewing Your homemade be
 
 Typically, *Recipe* looks more or less lke this:
 
-![Recipe Example](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_recipe.png)
+![Recipe Example](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_recipe.png | =305x413)
 
 
 ## Navigation
