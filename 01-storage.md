@@ -49,18 +49,15 @@ We need to define buckets for:
 ### Define global variables
 
 ```
-export GCP_INPUT_BUCKET=gft-academy-bq-input-${GOOGLE_CLOUD_PROJECT}
-export GCP_OUTPUT_BUCKET=gft-academy-bq-output-${GOOGLE_CLOUD_PROJECT}
-export GCP_WORKSPACE_BUCKET=gft-academy-bq-workspace-${GOOGLE_CLOUD_PROJECT}
+export GCP_INPUT_BUCKET=${GOOGLE_CLOUD_PROJECT}-input
+export GCP_TEMP_BUCKET=${GOOGLE_CLOUD_PROJECT}-temp
 ```
 
 ### Create 3 buckets
  
 ```
-TBD
-gsutil mb -c regional -l europe-west3 gs://${GCP_INPUT_BUCKET}
-gsutil mb -c regional -l europe-west3 gs://${GCP_OUTPUT_BUCKET}
-gsutil mb -c regional -l europe-west3 gs://${GCP_WORKSPACE_BUCKET}
+gsutil mb -c regional -l us-central1 gs://${GCP_INPUT_BUCKET}
+gsutil mb -c regional -l us-central1 gs://${GCP_TEMP_BUCKET}
 ```
 
 ### Upload sample data
