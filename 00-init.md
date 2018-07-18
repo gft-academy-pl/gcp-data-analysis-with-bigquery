@@ -32,7 +32,7 @@ cloudshell edit 00-init.md
 
 ## Project overview
 
-![Diagram](https://github.com/gft-academy-pl/gcp-anti-fraud-detector/blob/master/assets/GFT%20Academy%20-%20anti%20fraud%20detector.png?raw=true)
+![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Data%20analysis%20with%20BQ%20-%20diagram.png?raw=true)
 
 ## Initialization / setup
 
