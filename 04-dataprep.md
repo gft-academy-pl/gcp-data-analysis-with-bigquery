@@ -2,10 +2,9 @@
 
 ## Agenda
 1. Dataprep Workflow
-2. Data flow
-3. Transformation recipe - brew Your perfect data source
-4. Working with recipies - discovering functionalities of Dataprep
-5. Exercises
+2. Transformation recipe - brew Your perfect data source
+3. Working with recipies - discovering functionalities of Dataprep
+4. Exercises
 
 ## Cloud Dataprep
 
@@ -26,10 +25,26 @@ It can be also described as following steps:
 4. **Enrich** - identify statistical outliers in your data for review and management, aggregate columnar data using a variety of aggregation functions
 5. **Validate and run** - validate the data and run the job
 
+### Import/Export - In and Out
+*Cloud Dataprep* is capable of importing data from number of sources, as well as exporting the results to few of the formats.
 
-### Google Cloud Dataflow
+#### From where it can Import?
 
-*Cloud Dataflow* is *Apache Beam*-based tool for........
+Your dataset can be imported from local storage, GCS or BigQuery in one of following formats:
+* Excel Spreadsheets (XLS, XLSX)
+* CSV
+* JSON (also nested ones!)
+* TSV
+* Avro
+* LOG
+* Plain Text
+
+#### To where it can Export? 
+* Google Cloud Storage (GCS)
+* BigQuery
+
+### Samples - Our Working Material
+
 
 ### Transformation recipe - brew Your perfect data source
 
@@ -76,7 +91,21 @@ Using *Cloud Dataprep* we are also able to enrich our data in a simmilar manner 
 
 ![Aggregating Column Example](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_aggregating-column-example.png)
 
+#### Validate & Run
+
+When Your recipe is complete, the last thing You need to do is just click *Run Job* button.
+
+![Run Job Button](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_run-job-button.png)
+
+Remember that *Cloud Dataprep* also allows You to **schedule** Your jobs!
+
 ### Exercises
+
+### Documentation & Resources
+
+* [Dataprep's Documentation](https://cloud.google.com/dataprep/docs/)
+* [Guide To Dataprep's Tasks](https://cloud.google.com/dataprep/docs/how-to)
+* [Overview of Sampling](https://cloud.google.com/dataprep/docs/html/Overview-of-Sampling_90112099)
 
 
 ## Navigation
