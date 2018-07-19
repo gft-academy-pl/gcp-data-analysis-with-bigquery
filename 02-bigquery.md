@@ -3,6 +3,7 @@
 ## Agenda
 - BigQuery - what is it?
   - access methods
+  - main features
   - pricing 
   - exercises
   
