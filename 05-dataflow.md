@@ -1,3 +1,9 @@
+![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Data%20analysis%20with%20BQ%20-%20diagram%20(part_2).png?raw=true)
+
+## Agenda
+- what is dataflow
+- what is apache beam
+
 ## Dataflow
 
 ![Dataflow](https://beam.apache.org/images/logo_google_cloud.png)
@@ -29,22 +35,8 @@ Basic concepts:
 
 ![Beam flow](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/beam-flow.png)
 
-Pipeline operations:
-- **Branching pipelines**
-
-![Branching](https://beam.apache.org/images/design-your-pipeline-multiple-pcollections.png)
-
-- **Merge pipelines**
-
-![Merge pipelines](https://beam.apache.org/images/design-your-pipeline-flatten.png)
-
-- **Multiple sources**
-
-![Multiple sources](https://beam.apache.org/images/design-your-pipeline-join.png)
-
 Features:
 - **Unified** - Use a single programming model for both batch and streaming use cases using Java, Python and other languages.
-![Unified](https://beam.apache.org/images/beam_architecture.png)
 - **Portable** - Execute pipelines on multiple execution environments like Dataflow, Spark, Flink, Apex, Gearpump or Local.
 ![Apex](https://beam.apache.org/images/logo_apex.png)
 ![Flink](https://beam.apache.org/images/logo_flink.png)
@@ -58,7 +50,6 @@ Features:
 - https://cloud.google.com/dataflow/docs/templates/overview
 - https://cloud.google.com/dataflow/docs/templates/creating-templates
 - https://cloud.google.com/dataflow/docs/templates/executing-templates
-
 
 ## Navigation
 
