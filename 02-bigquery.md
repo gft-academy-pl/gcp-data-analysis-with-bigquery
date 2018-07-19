@@ -27,11 +27,11 @@ BigQuery and Dremel share the same underlying architecture. By incorporating col
 ### BigQuery pricing
 BigQuery charges for data storage, streaming inserts, and for querying data, but loading and exporting data are free of charge.
 
-![PricingStorage](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/pricing%20-%20query.png)
+![PricingStorage](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/pricing%20-%20storage.png)
 
 For querying data two different pricing options are possible:
 
-![PricingQuery](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/pricing%20-%20storage.png)
+![PricingQuery](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/pricing%20-%20query.png)
 
 Pricing guide: https://cloud.google.com/bigquery/pricing
 
