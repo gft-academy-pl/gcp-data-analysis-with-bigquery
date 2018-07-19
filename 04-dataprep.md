@@ -114,7 +114,10 @@ After processing job is done and you have checked *Profile Results* checkbox, Yo
 
 ### Exercises
 
-
+As Dataprep creates a Dataflow pipeline underneath in order to process data, enable Dafalow API.  
+  
+`gcloud services enable dataflow.googleapis.com`  
+  
 1. Create flow **LoadTradesIntoBQ** using file below and import data into the dataset on [training platform](https://clouddataprep.com/).
  ```
  gs://${GCP_INPUT_BUCKET}/trades/trades_2016.csv
