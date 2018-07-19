@@ -76,7 +76,7 @@ Refer the link for import/export limitations:
 	https://cloud.google.com/bigquery/quotas
 
 ### BigQuery supports partitioning feature.
-[Partitioning](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Partitioning.png?raw=true)  
+![Partitioning](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Partitioning.png?raw=true)  
   
 Idea is the same comparing to relational databases. Dividing a large table into smaller pieces (partitions) improve query performance, and reduce the number of bytes read by a query.
   
