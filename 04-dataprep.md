@@ -116,6 +116,26 @@ After processing job is done and you have checked *Profile Results* checkbox, Yo
 
 ### Exercises
 
+
+1. Create flow **LoadTradesIntoBQ** using file below and import data into the dataset on [training platform](https://clouddataprep.com/).
+ ```
+ gs://${GCP_INPUT_BUCKET}/trades/trades_2016.csv
+ ```
+ 
+2. Review data using Dataprep's histograms.
+3. Create a recipe and put following filters in order to clean data:
+    * region IS NOT NULL
+    * status IS NOT NULL
+4. convert securityId, year columns to integer
+5. Set output options: 
+```
+(BigQuery: {GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades)
+```
+6. For the demo purpose, remember to uncheck profile details capturing option before runing a job. 
+7. Run a job. 
+8. Review job status tab in Dataprep tool.
+9. Make sure data is loaded into BigQuery. 
+
 ### Documentation & Resources
 
 * [Dataprep's Documentation](https://cloud.google.com/dataprep/docs/)
