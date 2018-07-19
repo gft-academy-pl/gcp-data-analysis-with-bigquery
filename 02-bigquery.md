@@ -40,12 +40,35 @@ Pricing guide: https://cloud.google.com/bigquery/pricing
 BigQuery API is automatically enabled in new projects - check it in APIs & Services Tab. 
 
 * Open BigQuery UI and pick a project created.
-  https://bigquery.cloud.google.com/
+ https://bigquery.cloud.google.com/
     
 * Create a `gft_academy_trades_analysis` dataset.
-* Create `trades` table in Bigquery - import data from file.
+### Create `trades` table in Bigquery - import data from file.
 
+Copy `trades_arch.csv` datafile into ./input/ dir (file bigger than 10 MB, so it can be imported only from Google Cloud resources):
+		`gsutil cp gs://thinking-mesh-199311/GFTAcademyFiles/trades/trades_arch.csv gs://${GCP_INPUT_BUCKET}/`
+	
+	BigQuery options:
+		Source Data:
+			* Source Data: Create from source
+			* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/trades_arch.csv
+			* File format: CSV
+		Destination Table:
+			* Table name: trades
+			* Table type: Native table
+		Schema:
+			* Pick option: Automatically detect
+		Options:
+			* Header rows to skip: 1
+			* Numbers of errors allowed: 0
+			* Write preference: Write if empty
+			* Destination Encryption: Default
 
+Review data in `trades` table - replace {GOOGLE_CLOUD_PROJECT} with your project-id:
+ `SELECT year, count(*) number_of_transactions`
+ `FROM '{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades'`
+ `GROUP BY year`
+ `ORDER BY year DESC`
 
 ## Navigation
 
