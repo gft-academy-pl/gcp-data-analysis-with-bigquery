@@ -8,4 +8,4 @@ and...
 
 ## Navigation
 
-- [Previous Step](./05-cloud-functions.md)
+- [Previous Step](./06-cloud-functions.md)
