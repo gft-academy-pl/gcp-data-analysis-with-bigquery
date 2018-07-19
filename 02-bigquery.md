@@ -3,7 +3,8 @@
 ## Agenda
 - BigQuery - what is it?
   - access methods
-  - main features
+  - import/export options
+  - features
   - pricing 
   - exercises
   
@@ -31,15 +32,67 @@ BigQuery and Dremel share the same underlying architecture. By incorporating col
   * Ruby
   * GO
 
-...  
-...  
-...  
-...  
-...  
-...  
-...  
-...  
+### Methods of loading data into BigQuery
+* DDL + DML statements (CREATE TABLE + INSERT INTO)
+* Query result saved as table
+* Load from a local file: 
+	- CSV (data only + schema autodect)
+	- JSON (data, data + schema)
+	- Avro (data + schema)
+	- Parquet (data + schema)
+	- ORC (data + schema)
+* From GCP external sources: 
+	- Cloud Storage
+	- Google Drive
+	- Google BigTable
+***Wildcards supported***  
 
+BigQuery can query external data sources directly without any data movement:  
+* Google Cloud Bigtable 
+* Google Cloud Storage
+* Google Drive  
+
+***Use cases:***  
+- Loading and cleaning data in one pass by querying the data from an external data source and writing the cleaned result into BigQuery storage.
+- Having a small amount of frequently changing data that you join with other tables. The frequently changing external data does not need to be reloaded every time it is updated.
+
+### Exporting data from BigQuery 
+The only supported export location is Google Cloud Storage.
+Possible file formats:
+	- CSV (compression option)
+	- JSON (compression option)
+	- Avro  
+  
+Wildcards are supported – 3 export options available:  
+Single URI --> most common for file size less than 1GB  
+	`gs://[YOUR_BUCKET]/file-name.json`  
+Single wildcard URI --> for file larger than 1GB  
+	`gs://[YOUR_BUCKET]/file-name-*.json`  
+	`gs://[YOUR_BUCKET]/path-component-*/file-name.json` (not supported in UI)  
+Multiple wildcard URIs --> for parallel processing (services like Hadoop on Google Cloud Platform)  
+	`'gs://my-bucket/file-name-1-*.json','gs://my-bucket/file-name-2-*.json','gs://my-bucket/file-name-3-*.json’`  
+
+Refer the link for import/export limitations:  
+	https://cloud.google.com/bigquery/quotas
+
+### BigQuery supports partitioning feature.
+[Partitioning](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Partitioning.png?raw=true)  
+  
+Idea is the same comparing to relational databases. Dividing a large table into smaller pieces (partitions) improve query performance, and reduce the number of bytes read by a query.
+  
+Two types of table partitioning in BigQuery:
+* tables partitioned by ingestion (load) time (_PARTITIONTIME pseudo column is automatically added to the table for filtering purpose)
+* partitioned tables: tables partitioned on a TIMESTAMP or DATE column
+  
+### Sharding tables approach
+![Sharding tables](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/gsod_shared_tables.png?raw=true)
+  
+Sharding tables in BigQuery means placing the data into multiple tables with the same schema and name but different name suffix. BigQuery must maintain a copy of the schema and metadata for each date-named table. Also, when date-named tables are used, BigQuery might be required to verify permissions for each queried table. This practice also adds to query overhead and impacts query performance. 
+  
+- Wildcards are supported, thus table naming convention is important in order to effectively filter the tables.
+- Combination of both approaches, partitioning and shared tables, for the same table set is also possible.
+- Pseudo column _TABLE_SUFFIX contains the values matched by the table wildcard. It can be used for filtering. 
+  
 ### BigQuery pricing
 BigQuery charges for data storage, streaming inserts, and for querying data, but loading and exporting data are free of charge.
 
