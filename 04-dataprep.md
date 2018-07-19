@@ -47,7 +47,7 @@ Your dataset can be imported from local storage, GCS or BigQuery in one of follo
 
 To prevent overwhelming the client or significantly impacting performance, *Cloud Dataprep* generates one or more samples of the data for display and manipulation in the client application. Of course, You can change the size of samples, the scope of the sample, and the method by which the sample is created.
 
-*Clout Dataprep* support serveral types of samples:
+*Cloud Dataprep* support serveral types of samples:
 * **First rows samples** - taken from the first set of rows in the transformed dataset based on the current cursor location in the recipe
 * **Random samples** - random selection of a subset of rows in the dataset
 * **Filter-based samples** - samples generated for the set of values taht matches provided filter criteria
