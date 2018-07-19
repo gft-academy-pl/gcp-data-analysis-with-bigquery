@@ -52,7 +52,7 @@ BigQuery API is automatically enabled in new projects - check it in APIs & Servi
 * In a BigQuery UI, create a `gft_academy_trades_analysis` dataset.
 ### Create `trades` table in Bigquery - import data from file.
 
-**Create table with following BigQuery options:**  
+>**Create table with following BigQuery options:**  
 >* Data:  
 >	* Source Data: Create from source  
 >	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/trades_arch.csv  
@@ -76,7 +76,7 @@ Review data in `trades` table:
 
 ### Create `rates` table in Bigquery - import data from file.
 
-**Create table with following BigQuery options:**  
+>**Create table with following BigQuery options:**  
 >* Data:  
 >	* Source Data: Create from source  
 >	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/rates_*.csv  
@@ -92,11 +92,37 @@ Review data in `trades` table:
 >	* Write preference: Write if empty  
 >	* Destination Encryption: Default  
 
-Review data in `trades` table:  
+Review data in `rates` table:  
 >	`SELECT publication_date, currency_Code, multiplier, avg_rate`  
 >	`FROM gft_academy_trades_analysis.rates`  
 >	`ORDER BY publication_date desc, currency_code`  
 >	`LIMIT 100`  
+
+### Create floowing views - replace {GOOGLE_CLOUD_PROJECT} with your project-id.
+The views will be used later in order to create a charts in Data Studio.  
+
+>	`CREATE VIEW {GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_client AS `  
+>	`SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM( `  
+>	`SELECT a.year, a.client, a.number_of_transactions, a.value_mld_PLN, `  
+>	`ROW_NUMBER() OVER(PARTITION BY a.year ORDER BY a.value_mld_PLN DESC) tran_rank FROM( `  
+>	`SELECT t.year, t.client, COUNT(*) number_of_transactions, `  
+>	`ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN `  
+>	`	FROM gft_academy_trades_analysis.trades AS t `  
+>	`	JOIN gft_academy_trades_analysis.rates AS r `  
+>	`	ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP)) `  
+>	`	WHERE t.region IS NOT NULL and t.status IS NOT NULL `  
+>	`	GROUP BY t.year, t.client) AS a) AS b `  
+>	`WHERE b.tran_rank <= 10`  
+
+>	`CREATE VIEW {GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_region AS `  
+>	`SELECT t.year, t.region, count(*) number_of_transactions, ROUND(sum(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN `  
+>	`FROM gft_academy_trades_analysis.trades as t `  
+>	`join gft_academy_trades_analysis.rates as r `  
+>	`ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP)) `  
+>	`where t.region is NOT null and t.status is not null `  
+>	`group by t.year, t.region `  
+
+
 
 ## Navigation
 
