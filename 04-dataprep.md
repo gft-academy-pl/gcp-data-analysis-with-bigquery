@@ -1,10 +1,10 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Data%20analysis%20with%20BQ%20-%20diagram%20(part_2).png?raw=true)
 
 ## Agenda
-1. Dataprep Workflow
-2. Transformation recipe - brew Your perfect data source
-3. Working with recipies - discovering functionalities of Dataprep
-4. Exercises
+- Dataprep Workflow
+- Transformation recipe - brew Your perfect data source
+- Working with recipies - discovering functionalities of Dataprep
+- Exercises
 
 ## Cloud Dataprep
 
