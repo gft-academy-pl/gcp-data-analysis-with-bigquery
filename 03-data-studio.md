@@ -50,6 +50,42 @@ Template selection is available
 
 ## Exercises
 
+**Chart 1**
+	
+1. Using the views created in previous section, add new datasources to the report. Add 'trades' table to datasources as well.
+2. Using `trades` table, add a series chart to the page and set following data settings:
+    * Dimention: year
+    * Data: SUM(value_mld_PLN) --> Trade Value (mld PLN)
+            SUM(number_of_transactions) --> Num of transations
+3. For one of the series, set right-hand axis
+4. Add trend lines (linear) to both series
+5. Pick "Show axis name" for both axis
+6. Add text field and provide a title for the chart.
+	
+**Chart 2**
+1. Add new page to the report.
+2. Using `transaction_by_year_region` view, add a bar chart to the page and set following data settings:
+    * Dimention: client
+    * Data: SUM(value_mld_PLN) --> Trade Value (mld PLN)
+            SUM(number_of_transactions) --> Num of transations
+3. For one of the series, set right-hand axis
+4. Pick "Show axis name" for both axis
+5. Add a control filter object to the chart and set following data settings:
+    * Dimention: year --> Pick a year
+    * Data: year
+6. Add text field and provide a title for the chart.
+
+**Chart 3**
+1. Add new page to the report.
+2. Using `transaction_by_year_client` view, add a pie chart to the page and set following data settings:
+    * Dimention: region
+    * Data: SUM(number_of_transactions) --> Num of transations
+    * Sour by: number_of_transactions
+3. Add a control filter object to the chart and set following data settings:
+    * Dimention: year --> Pick a year
+    * Data: year
+4. Add text field and provide a title for the chart.	 
+
 ## Navigation
 
 - [Previous Step](./02-bigquery.md)
