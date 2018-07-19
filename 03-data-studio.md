@@ -26,7 +26,7 @@ You can use either locally-stored files (ex. CSV) and files stored on *Google Cl
 After Your data is imported, You are able to design Your report.
 You can also add another data sources in `File > Report Settings`.
 
-![Multiple Data Sources](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_multiple-datasources.png)
+![Multiple Data Sources](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_mutliple-datasources.png)
 
 Layout of application ressembles that of *GSuite* apps.
 
