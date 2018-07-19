@@ -1,3 +1,7 @@
+![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Data%20analysis%20with%20BQ%20-%20diagram.png?raw=true)
+
+## Agenda
+
 ## BigQuery
 
 **Google BigQuery** is a highly scalable and fast data warehouse for enterprises that assist the data analysts in Big data analytics at all scales. Furthermore, Google BigQuery is a low-cost warehouse that allows data analysts to become more productive. There is no infrastructure that needs to be managed, and you can always focus on meaningful insights derived from data analysis.
