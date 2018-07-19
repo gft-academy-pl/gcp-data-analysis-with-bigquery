@@ -44,8 +44,9 @@ Components can be arranged on the grid in any order. Also, each component has se
 
 *Cloud Data Studio* also features embedded template engine.
 Thanks to that mechanism aside from creating whole layout manually, all You have to do is to select template that suits your needs, swap data sources and You are good to go!
-Template selection is available  
-![Templates Selection](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_templates.png)
+Template selection is available
+  
+![Templates Selection](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_templates.png)  
 
 
 ## Exercises
