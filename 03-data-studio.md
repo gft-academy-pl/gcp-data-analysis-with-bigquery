@@ -1,4 +1,8 @@
 ## Agenda
+- Data Studio
+  - What is that?
+  - Workflow
+  - Visual designer
 
 ## Data Studio
 
