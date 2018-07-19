@@ -148,5 +148,5 @@ gcloud beta functions deploy triggerDataflowFn --trigger-bucket=gs://${GCP_INPUT
 
 ## Navigation
 
-- [Previous Step](./04-dataprep.md)
-- [Next Step](./06-clean-up.md)
+- [Previous Step](./05-dataflow.md)
+- [Next Step](./07-clean-up.md)
