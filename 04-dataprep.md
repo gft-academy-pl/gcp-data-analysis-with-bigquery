@@ -45,6 +45,17 @@ Your dataset can be imported from local storage, GCS or BigQuery in one of follo
 
 ### Samples - Our Working Material
 
+To prevent overwhelming the client or significantly impacting performance, *Cloud Dataprep* generates one or more samples of the data for display and manipulation in the client application. Of course, You can change the size of samples, the scope of the sample, and the method by which the sample is created.
+
+*Clout Dataprep* support serveral types of samples:
+* **First rows samples** - taken from the first set of rows in the transformed dataset based on the current cursor location in the recipe
+* **Random samples** - random selection of a subset of rows in the dataset
+* **Filter-based samples** - samples generated for the set of values taht matches provided filter criteria
+* **Anomaly-based samples** - consists of mismatched or missing data or both in one or more columns
+* **Stratified samples** - constructed from all unique values within a column and create a sample that contains the unique values, up to the sample size limit. The distribution of the column values in the sample reflects the distribution of the column values in the dataset. Sampled values are sorted by frequency, relative to the specified column.
+It can be also filtered
+* **Cluster-based samples** -  built from collection of contiguous rows in the dataset that corresponds to a random selection from the unique values in a column. All rows corresponding to the selected unique values appear in the sample, up to the maximum sample size. This sampling is useful for time-series analysis and advanced aggregations.
+It can be also filtered.
 
 ### Transformation recipe - brew Your perfect data source
 
@@ -98,6 +109,10 @@ When Your recipe is complete, the last thing You need to do is just click *Run J
 ![Run Job Button](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_run-job-button.png)
 
 Remember that *Cloud Dataprep* also allows You to **schedule** Your jobs!
+
+After processing job is done and you have checked *Profile Results* checkbox, You will be provided with *Data Profile View* which consists of numerous statistics that are describing Your final dataset.
+
+![Data Profile](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_data-profile.png)
 
 ### Exercises
 
