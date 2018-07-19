@@ -1,4 +1,9 @@
 ## Agenda
+1. Dataprep Workflow
+2. Data flow
+3. Transformation recipe - brew Your perfect data source
+4. Working with recipies - discovering functionalities of Dataprep
+5. Exercises
 
 ## Cloud Dataprep
 
@@ -6,8 +11,9 @@
 *Cloud Dataprep* is tool developed and managed by **Trifacta**, which allows You to import data from external source (CSV, JSON etc.), cleanse, transform and enrich them according to Your project's needs.
 For example, it can be used to transform traffic data of Your application into proper spreadsheet/table, perform deep analysis on them and prepare them to be stored in database engine.
 
+
 ### Dataprep Workflow
-![Application Flow](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_appflow.png)
+![Application Workflow](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_appflow.png)
 
 Above image illustrates the most common workflow of *Cloud Dataprep* usage - dataprep job.
 It can be also described as following steps:
@@ -18,7 +24,12 @@ It can be also described as following steps:
 4. **Enrich** - identify statistical outliers in your data for review and management, aggregate columnar data using a variety of aggregation functions
 5. **Validate and run** - validate the data and run the job
 
-### Transform recipe - brew Your perfect data source
+
+### Google Cloud Dataflow
+
+*Cloud Dataflow* is *Apache Beam*-based tool for........
+
+### Transformation recipe - brew Your perfect data source
 
 In *Cloud Dataprep* all operations which You will be doing on raw input data are recorded as kind of recipe (literally). 
 You can think of transforming raw data info table as of brewing Your homemade beer.
@@ -26,6 +37,44 @@ You can think of transforming raw data info table as of brewing Your homemade be
 Typically, *Recipe* looks more or less lke this:
 
 ![Recipe Example](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_recipe.png)
+
+
+### Working with recipies - discovering functionalities of Dataprep
+
+*Recipe* is basically list of instructions which will be performed on raw data one by one.
+Each step can be moved, modified or deleted at any point of Your work process.
+
+Worth noting is also the fact that recipes can be **reused** and **chained** together.
+
+![Main View](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_main-view.png)
+
+#### Cleansing the data
+
+After importing the data, You are provided with data histogram for all the columns.
+Color codes helps you to define wether data in particular column is incomplete or invalid:
+
+![Column Histograms](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_column-histograms.png)
+
+* **GREEN** - valid rows
+* **BLACK** - rows with missing values
+* **RED** - invalid rows (mostly due to mismatching data type)
+
+By clicking on colored part of histogram, You are able to select all rows of specific category and perfom some transformations on them (ex. fill mising fields with 'N/A'):
+
+![Histogram Fractions](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_histogram-fractions.png)
+
+![Empty Rows Selcted](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_empty-rows-selected.png)
+
+![Replacing Mising Values](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_replacing-missing-values.png)
+
+#### Enriching the data
+
+Using *Cloud Dataprep* we are also able to enrich our data in a simmilar manner to standard spreadsheet.
+*Dataprep* gives us whole set of function to use (ex. SUM, AVERAGE, MAX etc.). We can also write our own formulas:
+
+![Aggregating Column Example](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_aggregating-column-example.png)
+
+### Exercises
 
 
 ## Navigation
