@@ -1,6 +1,6 @@
 ## BigQuery
 
-Google BigQuery is a highly scalable and fast data warehouse for enterprises that assist the data analysts in Big data analytics at all scales. Furthermore, Google BigQuery is a low-cost warehouse that allows data analysts to become more productive. There is no infrastructure that needs to be managed, and you can always focus on meaningful insights derived from data analysis.
+**Google BigQuery** is a highly scalable and fast data warehouse for enterprises that assist the data analysts in Big data analytics at all scales. Furthermore, Google BigQuery is a low-cost warehouse that allows data analysts to become more productive. There is no infrastructure that needs to be managed, and you can always focus on meaningful insights derived from data analysis.
 
 BigQuery is built on top of Dremel technology which has been in production internally in Google since 2006. Dremel is Google’s interactive ad-hoc query system for analysis of read-only nested data.
 
@@ -39,36 +39,57 @@ Pricing guide: https://cloud.google.com/bigquery/pricing
 ## BigQuery - exercises
 BigQuery API is automatically enabled in new projects - check it in APIs & Services Tab. 
 
-* Open BigQuery UI and pick a project created.
- https://bigquery.cloud.google.com/
+* Open BigQuery UI and pick a project created.  
+	https://bigquery.cloud.google.com/
     
-* Create a `gft_academy_trades_analysis` dataset.
+* In a BigQuery UI, create a `gft_academy_trades_analysis` dataset.
 ### Create `trades` table in Bigquery - import data from file.
 
-Copy `trades_arch.csv` datafile into ./input/ dir (file bigger than 10 MB, so it can be imported only from Google Cloud resources):
-		`gsutil cp gs://thinking-mesh-199311/GFTAcademyFiles/trades/trades_arch.csv gs://${GCP_INPUT_BUCKET}/`
-	
-	BigQuery options:
-		Source Data:
-			* Source Data: Create from source
-			* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/trades_arch.csv
-			* File format: CSV
-		Destination Table:
-			* Table name: trades
-			* Table type: Native table
-		Schema:
-			* Pick option: Automatically detect
-		Options:
-			* Header rows to skip: 1
-			* Numbers of errors allowed: 0
-			* Write preference: Write if empty
-			* Destination Encryption: Default
+**Create table with following BigQuery options:**  
+>* Data:  
+>	* Source Data: Create from source  
+>	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/trades_arch.csv  
+>	* File format: CSV  
+>* Table:  
+>	* Table name: trades  
+>	* Table type: Native table  
+>* Schema:  
+>	* Pick option: Automatically detect  
+>* Options:  
+>	* Header rows to skip: 1  
+>	* Numbers of errors allowed: 0  
+>	* Write preference: Write if empty  
+>	* Destination Encryption: Default  
 
-Review data in `trades` table - replace {GOOGLE_CLOUD_PROJECT} with your project-id:
- `SELECT year, count(*) number_of_transactions`
- `FROM '{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades'`
- `GROUP BY year`
- `ORDER BY year DESC`
+Review data in `trades` table:  
+>	`SELECT year, count(*) number_of_transactions`  
+>	`FROM gft_academy_trades_analysis.trades`  
+>	`GROUP BY year`  
+>	`ORDER BY year DESC`  
+
+### Create `rates` table in Bigquery - import data from file.
+
+**Create table with following BigQuery options:**  
+>* Data:  
+>	* Source Data: Create from source  
+>	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/rates_*.csv  
+>	* File format: CSV  
+>* Table:  
+>	* Table name: rates  
+>	* Table type: External table  
+>* Schema:  
+>	* Pick option: Automatically detect  
+>* Options:  
+>	* Header rows to skip: 1  
+>	* Numbers of errors allowed: 0  
+>	* Write preference: Write if empty  
+>	* Destination Encryption: Default  
+
+Review data in `trades` table:  
+>	`SELECT publication_date, currency_Code, multiplier, avg_rate`  
+>	`FROM gft_academy_trades_analysis.rates`  
+>	`ORDER BY publication_date desc, currency_code`  
+>	`LIMIT 100`  
 
 ## Navigation
 
