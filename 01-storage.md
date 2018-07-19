@@ -1,6 +1,5 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Data%20analysis%20with%20BQ%20-%20diagram%20(part_1).png?raw=true)
 
-
 ## Agenda
 - Google Cloud storage options
 - Cloud Storage
