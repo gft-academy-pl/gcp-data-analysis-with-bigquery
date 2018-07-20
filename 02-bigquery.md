@@ -131,10 +131,12 @@ BigQuery API is automatically enabled in new projects - check it in APIs & Servi
 >	* Destination Encryption: Default  
 
 Review data in `trades` table:  
->	`SELECT year, count(*) number_of_transactions`  
->	`FROM gft_academy_trades_analysis.trades`  
->	`GROUP BY year`  
->	`ORDER BY year DESC`  
+```
+SELECT year, count(*) number_of_transactions
+FROM gft_academy_trades_analysis.trades
+GROUP BY year
+ORDER BY year DESC
+```
 
 ### Create `rates` table in Bigquery - import data from file.
 
@@ -155,10 +157,12 @@ Review data in `trades` table:
 >	* Destination Encryption: Default  
 
 Review data in `rates` table:  
->	`SELECT publication_date, currency_Code, multiplier, avg_rate`  
->	`FROM gft_academy_trades_analysis.rates`  
->	`ORDER BY publication_date desc, currency_code`  
->	`LIMIT 100`  
+```
+SELECT publication_date, currency_Code, multiplier, avg_rate
+FROM gft_academy_trades_analysis.rates
+ORDER BY publication_date desc, currency_code
+LIMIT 100
+```
 
 ### Create floowing views - replace {GOOGLE_CLOUD_PROJECT} with your project-id.
 The views will be used later in order to create a charts in Data Studio.  
