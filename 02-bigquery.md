@@ -168,7 +168,7 @@ LIMIT 100
 The views will be used later in order to create a charts in Data Studio.  
 
 ```
-CREATE VIEW {GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_client AS
+CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_client` AS
 SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
 	SELECT a.year, a.client, a.number_of_transactions, a.value_mld_PLN,
 	ROW_NUMBER() OVER(PARTITION BY a.year ORDER BY a.value_mld_PLN DESC) tran_rank FROM(
@@ -183,7 +183,7 @@ SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
 ```
   
 ```
-CREATE VIEW {GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_region AS
+CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_region` AS
 SELECT t.year, t.region, count(*) number_of_transactions, 
 	ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN
 	FROM gft_academy_trades_analysis.trades as t
