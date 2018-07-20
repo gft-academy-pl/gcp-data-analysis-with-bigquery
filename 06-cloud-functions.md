@@ -139,6 +139,19 @@ npm run test-auth-jwt
 gcloud beta functions deploy triggerDataflowFn --trigger-bucket=gs://${GCP_INPUT_BUCKET}
 ```
 
+### Once Cloud Function deployed, perform a simple test  
+Copy datafile into the ./input/ directory.
+
+```
+gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2017.csv gs://${GCP_INPUT_BUCKET}/trades/
+```
+Check if Dataflow job is triggered. Once completed, check if data for 2017 year is available in BigQuery (`trades` table).  
+You can repeat the same for file `trades_2018.csv`.  
+
+```
+gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2018.csv gs://${GCP_INPUT_BUCKET}/trades/
+```
+
 ## Documentation & Resources
 - https://cloud.google.com/functions/docs/
 - https://github.com/GoogleCloudPlatform/cloud-functions-emulator _(for development!!!)_
