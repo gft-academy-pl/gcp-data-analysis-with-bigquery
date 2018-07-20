@@ -72,9 +72,15 @@ npm install
 ### Generate config.json
 
 ```
-sed -i 's/__INPUT_BUCKET__/'"$GCP_INPUT_BUCKET"'/' ./config.json
-sed -i 's/__OUTPUT_BUCKET__/'"$GCP_OUTPUT_BUCKET"'/' ./config.json
-sed -i 's/__WORKSPACE_BUCKET__/'"$GCP_WORKSPACE_BUCKET"'/' ./config.json
+export GCP_OUTPUT_LOCATION=${GOOGLE_CLOUD_PROJECT}:gft_academy_trades_analysis.trades
+export DPREP_BUCKET=`gsutil ls -l | grep dataprep`
+export ACCOUNT=`gcloud config list account --format "value(core.account)"`
+export GCP_TEMPLATE_LOCATION=`gsutil ls -l $DPREP_BUCKET$ACCOUNT/temp/ | grep template | grep -v metadata | sort -k2n | tail -n1 | awk 'END {$1=$2=""; sub(/^[ \t]+/, ""); print }' | cut -c 6- | sed 's/\\//\\\\\\//g'`
+
+sed -i 's/__INPUT__/'"$GCP_INPUT_BUCKET"'/' ./config.json
+sed -i 's/__OUTPUT__/'"$GCP_OUTPUT_LOCATION"'/' ./config.json
+sed -i 's/__TEMP__/'"$GCP_TEMP_BUCKET"'/' ./config.json
+sed -i 's/__TEMPLATE__/'"$GCP_TEMPLATE_LOCATION"'/' ./config.json
 cat config.json
  ```
  
