@@ -12,6 +12,7 @@ exports.triggerDataflowFn = (event, callback) => {
 
 	if (file.name.startsWith('trades/trades_')) {
       return google.auth.getClient({
+		keyFile: path.join(__dirname, 'jwt.keys.json'),
 		scopes: [
 			'https://www.googleapis.com/auth/cloud-platform',
 			'https://www.googleapis.com/auth/userinfo.email'
