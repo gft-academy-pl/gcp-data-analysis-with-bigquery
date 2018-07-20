@@ -72,6 +72,9 @@ npm install
 ### Generate config.json
 
 ```
+export GCP_INPUT_BUCKET=${GOOGLE_CLOUD_PROJECT}-input
+export GCP_TEMP_BUCKET=${GOOGLE_CLOUD_PROJECT}-temp
+
 export GCP_OUTPUT_LOCATION=${GOOGLE_CLOUD_PROJECT}:gft_academy_trades_analysis.trades
 export DPREP_BUCKET=`gsutil ls -l | grep dataprep`
 export ACCOUNT=`gcloud config list account --format "value(core.account)"`
