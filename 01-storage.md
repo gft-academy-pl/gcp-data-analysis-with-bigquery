@@ -63,8 +63,28 @@ gsutil mb -c regional -l us-central1 gs://${GCP_TEMP_BUCKET}
 ### Upload sample data
 
 ```
-gsutil -m cp -r gs://gft-academy-fraud-detector-public-data/trades gs://${GCP_INPUT_BUCKET}
-gsutil -m cp -r gs://gft-academy-fraud-detector-public-data/rates gs://${GCP_INPUT_BUCKET}
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/trades/trades_arch.csv gs://${GCP_INPUT_BUCKET}/trades/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/trades/trades_2016.csv gs://${GCP_INPUT_BUCKET}/trades/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/trades/trades_2017.csv gs://${GCP_INPUT_BUCKET}/trades/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/trades/trades_2018.csv gs://${GCP_INPUT_BUCKET}/trades/
+
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2002.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2003.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2004.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2005.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2006.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2007.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2008.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2009.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2010.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2011.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2012.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2013.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2014.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2015.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2016.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2017.csv gs://${GCP_INPUT_BUCKET}/rates/
+gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2018.csv gs://${GCP_INPUT_BUCKET}/rates/
 ```
 
 ## Documentation & Resources
