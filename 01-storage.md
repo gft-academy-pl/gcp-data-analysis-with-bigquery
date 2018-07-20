@@ -65,8 +65,6 @@ gsutil mb -c regional -l us-central1 gs://${GCP_TEMP_BUCKET}
 ```
 gsutil -m cp gs://gft-academy-fraud-detector-public-data/trades/trades_arch.csv gs://${GCP_INPUT_BUCKET}/trades/
 gsutil -m cp gs://gft-academy-fraud-detector-public-data/trades/trades_2016.csv gs://${GCP_INPUT_BUCKET}/trades/
-gsutil -m cp gs://gft-academy-fraud-detector-public-data/trades/trades_2017.csv gs://${GCP_INPUT_BUCKET}/trades/
-gsutil -m cp gs://gft-academy-fraud-detector-public-data/trades/trades_2018.csv gs://${GCP_INPUT_BUCKET}/trades/
 
 gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2002.csv gs://${GCP_INPUT_BUCKET}/rates/
 gsutil -m cp gs://gft-academy-fraud-detector-public-data/rates/rates_2003.csv gs://${GCP_INPUT_BUCKET}/rates/
