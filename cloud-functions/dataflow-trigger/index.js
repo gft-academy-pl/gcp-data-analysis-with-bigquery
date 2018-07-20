@@ -10,7 +10,7 @@ exports.triggerDataflowFn = (event, callback) => {
 
 	const file = event.data;
 
-	if (file.name.startsWith('trades_')) {
+	if (file.name.startsWith('trades/trades_')) {
       return google.auth.getClient({
 		scopes: [
 			'https://www.googleapis.com/auth/cloud-platform',
