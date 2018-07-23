@@ -32,10 +32,14 @@ https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/03
 
 https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/04-dataprep.md
 
-### Step 5 - Cloud Functions
+### Step 5 - Dataflow
 
-https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/05-cloud-functions.md
+https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/05-dataflow.md
 
-### Step 6 - Clean up
+### Step 6 - Cloud Functions
 
-https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/06-clean-up.md
+https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/06-cloud-functions.md
+
+### Step 7 - Clean up
+
+https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/07-clean-up.md
