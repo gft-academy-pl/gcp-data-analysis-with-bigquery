@@ -1,7 +1,7 @@
 ![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Data%20analysis%20with%20BQ%20-%20diagram%20(part_1).png?raw=true)
 
 ## Agenda
-- Google Cloud storage options
+- Storage decision tree
 - Cloud Storage
 - gsutil 
 - Cloud Storage - exercises
@@ -9,7 +9,7 @@
   - Create 2 buckets
   - Upload sample data
 
-## Google Cloud storage options
+## Storage decision tree
 ![alt text][storage_options]
 
 [storage_options]: https://cloud.google.com/images/storage-options/flowchart.svg "https://cloud.google.com/images/storage-options/flowchart.svg"
