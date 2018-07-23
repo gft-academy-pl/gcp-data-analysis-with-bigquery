@@ -53,7 +53,7 @@ Template selection is available
 
 Add views created in previous section and 'trades' table to Data Studio datasources.
 
-**Chart 1**
+**Chart 1 - cumulated number of transaction and trades value per year**
 	
 1. Using `transaction_by_year_region` view, add a series chart to the page and set following data settings:
     * Dimention: year
@@ -64,9 +64,9 @@ Add views created in previous section and 'trades' table to Data Studio datasour
 4. Pick "Show axis name" for both axis
 5. Add text field and provide a title for the chart.
 	
-**Chart 2**
+**Chart 2 - ten the most active clients (by number of transactions) for a given year**
 1. Add new page to the report.
-2. Using `transaction_by_year_region` view, add a bar chart to the page and set following data settings:
+2. Using `transaction_by_year_client` view, add a bar chart to the page and set following data settings:
     * Dimention: client
     * Data: SUM(value_mld_PLN) --> Trade Value (mld PLN)
             SUM(number_of_transactions) --> Num of transations
@@ -77,12 +77,12 @@ Add views created in previous section and 'trades' table to Data Studio datasour
     * Data: year
 6. Add text field and provide a title for the chart.
 
-**Chart 3**
+**Chart 3 - number of transaction for given year - regional structure**
 1. Add new page to the report.
-2. Using `transaction_by_year_client` view, add a pie chart to the page and set following data settings:
+2. Using `transaction_by_year_region` view, add a pie chart to the page and set following data settings:
     * Dimention: region
     * Data: SUM(number_of_transactions) --> Num of transations
-    * Sour by: number_of_transactions
+    * Sort by: number_of_transactions
 3. Add a control filter object to the chart and set following data settings:
     * Dimention: year --> Pick a year
     * Data: year
