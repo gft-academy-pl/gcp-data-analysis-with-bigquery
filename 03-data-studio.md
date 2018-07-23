@@ -55,7 +55,7 @@ Add views created in previous section and 'trades' table to Data Studio datasour
 
 **Chart 1**
 	
-1. Using `trades` table, add a series chart to the page and set following data settings:
+1. Using `transaction_by_year_region` view, add a series chart to the page and set following data settings:
     * Dimention: year
     * Data: SUM(value_mld_PLN) --> Trade Value (mld PLN)
             SUM(number_of_transactions) --> Num of transations
