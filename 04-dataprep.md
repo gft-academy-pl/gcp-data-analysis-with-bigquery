@@ -114,9 +114,7 @@ After processing job is done and you have checked *Profile Results* checkbox, yo
 
 ### Exercises
 
-As Dataprep creates a Dataflow pipeline underneath in order to process data, enable Dafalow API.  
-  
-`gcloud services enable dataflow.googleapis.com`  
+As Dataprep creates a Dataflow pipeline underneath in order to process data, enable Dafalow API using command line: `gcloud services enable dataflow.googleapis.com` or [console/UI](https://console.cloud.google.com/apis/library/dataflow.googleapis.com). 
   
 1. Create flow **LoadTradesIntoBQ** using file below and import data into the dataset on [training platform](https://clouddataprep.com/). Replace _`{GCP_INPUT_BUCKET}`_ with your input bucket name.
    ```
