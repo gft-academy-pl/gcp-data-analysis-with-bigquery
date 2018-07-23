@@ -2,15 +2,15 @@
 
 ## Agenda
 - Dataprep Workflow
-- Transformation recipe - brew Your perfect data source
+- Transformation recipe - brew your perfect data source
 - Working with recipies - discovering functionalities of Dataprep
 - Exercises
 
 ## Cloud Dataprep
 
 ### Concept & Purpose
-*Cloud Dataprep* is tool developed and managed by **Trifacta**, which allows You to import data from external source (CSV, JSON etc.), cleanse, transform and enrich them according to Your project's needs.
-For example, it can be used to transform traffic data of Your application into proper spreadsheet/table, perform deep analysis on them and prepare them to be stored in database engine.
+*Cloud Dataprep* is tool developed and managed by **Trifacta**, which allows you to import data from external source (CSV, JSON etc.), cleanse, transform and enrich them according to your project's needs.
+For example, it can be used to transform traffic data of your application into proper spreadsheet/table, perform deep analysis on them and prepare them to be stored in database engine.
 
 
 ### Dataprep Workflow
@@ -45,7 +45,7 @@ Your dataset can be imported from local storage, GCS or BigQuery in one of follo
 
 ### Samples - Our Working Material
 
-To prevent overwhelming the client or significantly impacting performance, *Cloud Dataprep* generates one or more samples of the data for display and manipulation in the client application. Of course, You can change the size of samples, the scope of the sample, and the method by which the sample is created.
+To prevent overwhelming the client or significantly impacting performance, *Cloud Dataprep* generates one or more samples of the data for display and manipulation in the client application. Of course, you can change the size of samples, the scope of the sample, and the method by which the sample is created.
 
 *Cloud Dataprep* support serveral types of samples:
 * **First rows samples** - taken from the first set of rows in the transformed dataset based on the current cursor location in the recipe
@@ -57,10 +57,10 @@ It can be also filtered
 * **Cluster-based samples** -  built from collection of contiguous rows in the dataset that corresponds to a random selection from the unique values in a column. All rows corresponding to the selected unique values appear in the sample, up to the maximum sample size. This sampling is useful for time-series analysis and advanced aggregations.
 It can be also filtered.
 
-### Transformation recipe - brew Your perfect data source
+### Transformation recipe - brew your perfect data source
 
-In *Cloud Dataprep* all operations which You will be doing on raw input data are recorded as kind of recipe (literally). 
-You can think of transforming raw data info table as of brewing Your homemade beer.
+In *Cloud Dataprep* all operations which you will be doing on raw input data are recorded as kind of recipe (literally). 
+You can think of transforming raw data info table as of brewing your homemade beer.
 
 Typically, *Recipe* looks more or less lke this:
 
@@ -70,7 +70,7 @@ Typically, *Recipe* looks more or less lke this:
 ### Working with recipies - discovering functionalities of Dataprep
 
 *Recipe* is basically list of instructions which will be performed on raw data one by one.
-Each step can be moved, modified or deleted at any point of Your work process.
+Each step can be moved, modified or deleted at any point of your work process.
 
 Worth noting is also the fact that recipes can be **reused** and **chained** together.
 
@@ -78,7 +78,7 @@ Worth noting is also the fact that recipes can be **reused** and **chained** tog
 
 #### Cleansing the data
 
-After importing the data, You are provided with data histogram for all the columns.
+After importing the data, you are provided with data histogram for all the columns.
 Color codes helps you to define wether data in particular column is incomplete or invalid:
 
 ![Column Histograms](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_column-histograms.png)
@@ -87,7 +87,7 @@ Color codes helps you to define wether data in particular column is incomplete o
 * **BLACK** - rows with missing values
 * **RED** - invalid rows (mostly due to mismatching data type)
 
-By clicking on colored part of histogram, You are able to select all rows of specific category and perfom some transformations on them (ex. fill mising fields with 'N/A'):
+By clicking on colored part of histogram, you are able to select all rows of specific category and perfom some transformations on them (ex. fill mising fields with 'N/A'):
 
 ![Empty Rows Selcted](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_empty-rows-selected.png)  ![Histogram Fractions](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_histogram-fractions.png)
 
@@ -102,13 +102,13 @@ Using *Cloud Dataprep* we are also able to enrich our data in a simmilar manner 
 
 #### Validate & Run
 
-When Your recipe is complete, the last thing You need to do is just click *Run Job* button.
+When your recipe is complete, the last thing you need to do is just click *Run Job* button.
 
 ![Run Job Button](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_run-job-button.png)
 
-Remember that *Cloud Dataprep* also allows You to **schedule** Your jobs!
+Remember that *Cloud Dataprep* also allows you to **schedule** your jobs!
 
-After processing job is done and you have checked *Profile Results* checkbox, You will be provided with *Data Profile View* which consists of numerous statistics that are describing Your final dataset.
+After processing job is done and you have checked *Profile Results* checkbox, you will be provided with *Data Profile View* which consists of numerous statistics that are describing your final dataset.
 
 ![Data Profile](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_data-profile.png)
 
