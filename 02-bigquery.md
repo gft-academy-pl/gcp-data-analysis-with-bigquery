@@ -125,7 +125,7 @@ GROUP BY year
 ORDER BY year DESC
 ```
 
-### Create `rates` table in Bigquery - import data from file.
+### Attach CSV files as table with name `rates`.
 
 >**Create table with following BigQuery options:**  
 > ![ratesTableCreate](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/rates_table.PNG?raw=true)  
