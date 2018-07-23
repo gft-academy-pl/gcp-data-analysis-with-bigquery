@@ -10,20 +10,20 @@
 
 ### Concept & Purpose
 *Cloud Data Studio* is tool to easily visualize data from one or more sources.
-It allows You to create various kinds of fully interactive reports, with few simple steps.
+It allows you to create various kinds of fully interactive reports, with few simple steps.
 
 *Cloud Data Studio* is basically visual editor for reports.
 
 ### Workflow
 
 ### Datasource Selection
-*Cloud Data Studio* supports whole palette of sources from where You will obtain Your data.
+*Cloud Data Studio* supports whole palette of sources from where you will obtain your data.
 You can use either locally-stored files (ex. CSV) and files stored on *Google Cloud Storage (GCS)*.
 
 ![Data Source Selection](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_data-sources.png)
 
 ### Visual Design
-After Your data is imported, You are able to design Your report.
+After your data is imported, you are able to design your report.
 You can also add another data sources in `File > Report Settings`.
 
 ![Multiple Data Sources](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_mutliple-datasources.png)
@@ -32,7 +32,7 @@ Layout of application ressembles that of *GSuite* apps.
 
 ![Report Design](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_report-design.png)
 
-As well as in these other application, also there You can choose from variety of components to put on the layout.
+As well as in these other application, also there you can choose from variety of components to put on the layout.
 
 ![Inserting Components](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_components.png)
 
@@ -43,7 +43,7 @@ Components can be arranged on the grid in any order. Also, each component has se
 ### Templates 
 
 *Cloud Data Studio* also features embedded template engine.
-Thanks to that mechanism aside from creating whole layout manually, all You have to do is to select template that suits your needs, swap data sources and You are good to go!
+Thanks to that mechanism aside from creating whole layout manually, all you have to do is to select template that suits your needs, swap data sources and you are good to go!
 Template selection is available
   
 ![Templates Selection](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/datastudio_templates.png)  
