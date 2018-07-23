@@ -51,17 +51,18 @@ Template selection is available
 
 ## Exercises
 
+Add views created in previous section and 'trades' table to Data Studio datasources.
+
 **Chart 1**
 	
-1. Using the views created in previous section, add new datasources to the report. Add 'trades' table to datasources as well.
-2. Using `trades` table, add a series chart to the page and set following data settings:
+1. Using `trades` table, add a series chart to the page and set following data settings:
     * Dimention: year
     * Data: SUM(value_mld_PLN) --> Trade Value (mld PLN)
             SUM(number_of_transactions) --> Num of transations
-3. For one of the series, set right-hand axis
-4. Add trend lines (linear) to both series
-5. Pick "Show axis name" for both axis
-6. Add text field and provide a title for the chart.
+2. For one of the series, set right-hand axis
+3. Add trend lines (linear) to both series
+4. Pick "Show axis name" for both axis
+5. Add text field and provide a title for the chart.
 	
 **Chart 2**
 1. Add new page to the report.
