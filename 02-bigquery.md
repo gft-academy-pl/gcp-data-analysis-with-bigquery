@@ -138,9 +138,10 @@ ORDER BY publication_date desc, currency_code
 LIMIT 100
 ```
 
-### Create floowing views - replace {GOOGLE_CLOUD_PROJECT} with your project-id.
+### Create views - replace {GOOGLE_CLOUD_PROJECT} with your project-id
 The views will be used later in order to create a charts in Data Studio.  
-
+  
+Ten the most active clients for given year.  
 ```sql
 CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_client` AS
 SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
@@ -155,7 +156,9 @@ SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
 	GROUP BY t.year, t.client) AS a
 ) AS b WHERE b.tran_rank <= 10
 ```
+
   
+Cumulated number of transactions and trades value (in mld PLN) for given region and year.  
 ```sql
 CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_region` AS
 SELECT t.year, t.region, count(*) number_of_transactions, 
