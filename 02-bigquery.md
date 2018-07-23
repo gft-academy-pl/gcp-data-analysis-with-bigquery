@@ -138,8 +138,9 @@ ORDER BY publication_date desc, currency_code
 LIMIT 100
 ```
 
-### Create views - replace {GOOGLE_CLOUD_PROJECT} with your project-id
-The views will be used later in order to create a charts in Data Studio.  
+### Save analytical queries as BigQuery views
+ 
+Create views which Data Studio will use as a data source. Please remember to replace {GOOGLE_CLOUD_PROJECT} with your project-id
   
 Ten the most active clients for given year.  
 ```sql
@@ -170,6 +171,56 @@ SELECT t.year, t.region, count(*) number_of_transactions,
 	GROUP BY t.year, t.region
 ```
 
+### Emergency  script creating all above BigQuery objects
+
+```bash
+#create dataset
+bq mk gft_academy_trades_analysis
+bq ls
+
+#create trades table
+bq load --autodetect --skip_leading_rows 1 --source_format=CSV gft_academy_trades_analysis.trades gs://${GCP_INPUT_BUCKET}/trades/trades_arch.csv
+
+#Review data in trades table
+bq query "SELECT year, count(*) number_of_transactions
+FROM gft_academy_trades_analysis.trades
+GROUP BY year
+ORDER BY year DESC"
+
+#create rates external table
+bq mkdef --autodetect --source_format=CSV gs://${GCP_INPUT_BUCKET}/rates/rates_*.csv > /tmp/rates.json
+bq mk --table --external_table_definition=/tmp/rates.json gft_academy_trades_analysis.rates
+
+#Review data in rates table
+bq query "SELECT publication_date, currency_Code, multiplier, avg_rate
+FROM gft_academy_trades_analysis.rates
+ORDER BY publication_date desc, currency_code
+LIMIT 100"
+
+#create views
+bq query --use_legacy_sql=false "CREATE VIEW \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_client\` AS
+SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
+SELECT a.year, a.client, a.number_of_transactions, a.value_mld_PLN,
+ROW_NUMBER() OVER(PARTITION BY a.year ORDER BY a.value_mld_PLN DESC) tran_rank FROM(
+SELECT t.year, t.client, COUNT(*) number_of_transactions,
+ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN
+FROM \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades\` AS t
+JOIN \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates\` AS r
+ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP)
+) WHERE t.region IS NOT NULL and t.status IS NOT NULL
+GROUP BY t.year, t.client) AS a
+) AS b WHERE b.tran_rank <= 10"
+
+
+bq query --use_legacy_sql=false "CREATE VIEW \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_region\` AS
+SELECT t.year, t.region, count(*) number_of_transactions, 
+ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN
+FROM \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades\` as t
+JOIN \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates\` as r
+ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP))
+WHERE t.region IS NOT NULL and t.status IS NOT NULL
+GROUP BY t.year, t.region"
+```
 
 ## Navigation
 
