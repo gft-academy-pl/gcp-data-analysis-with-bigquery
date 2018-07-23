@@ -109,7 +109,7 @@ Pricing guide: https://cloud.google.com/bigquery/pricing
 BigQuery API is automatically enabled in new projects - check it in APIs & Services Tab. 
 
 * Open BigQuery UI and pick a project created.  
-	https://bigquery.cloud.google.com/
+	https://console.cloud.google.com/bigquery
     
 * In a BigQuery UI, create a `gft_academy_trades_analysis` dataset.
 ### Create `trades` table in Bigquery - import data from file.
