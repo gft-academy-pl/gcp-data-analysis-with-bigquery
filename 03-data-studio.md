@@ -51,7 +51,7 @@ Template selection is available
 
 ## Exercises
 
-Add views created in previous section and 'trades' table to Data Studio datasources.
+Open Data Studio editor: https://datastudio.google.com.  Add two views created in previous section and 'trades' table to Data Studio datasources.
 
 **Chart 1 - cumulated number of transaction and trades value per year**
 	
