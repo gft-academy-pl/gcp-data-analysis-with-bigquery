@@ -118,7 +118,7 @@ As Dataprep creates a Dataflow pipeline underneath in order to process data, ena
   
 `gcloud services enable dataflow.googleapis.com`  
   
-1. Create flow **LoadTradesIntoBQ** using file below and import data into the dataset on [training platform](https://clouddataprep.com/).
+1. Create flow **LoadTradesIntoBQ** using file below and import data into the dataset on [training platform](https://clouddataprep.com/). Replace `${GCP_INPUT_BUCKET}` with your input bucket name.
  ```
  gs://${GCP_INPUT_BUCKET}/trades/trades_2016.csv
  ```
@@ -127,8 +127,8 @@ As Dataprep creates a Dataflow pipeline underneath in order to process data, ena
 3. Create a recipe and put following filters in order to clean data:
     * region IS NOT NULL
     * status IS NOT NULL
-4. convert securityId, year columns to integer
-5. Set output options: 
+4. Convert securityId, year columns to integer
+5. Set output options (replace `{GOOGLE_CLOUD_PROJECT}` with your project_id): 
 ```
 (BigQuery: {GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades)
 ```
