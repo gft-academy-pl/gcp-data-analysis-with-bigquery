@@ -64,14 +64,14 @@ https://cloud.google.com/compute/docs/access/service-accounts
 ### Code
 - Implementation: https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/cloud-functions/dataflow-trigger/index.js
 
-```
+```bash
 cd ~/gcp-data-analysis-with-bigquery/cloud-functions/dataflow-trigger
 npm install
 ```
 
 ### Generate config.json
 
-```
+```bash
 export GCP_INPUT_BUCKET=${GOOGLE_CLOUD_PROJECT}-input
 export GCP_TEMP_BUCKET=${GOOGLE_CLOUD_PROJECT}-temp
 
@@ -89,13 +89,13 @@ cat config.json
  
 ### Test API call with Application Default Credentials
 
-```
+```bash
 npm run test-auth-default
 ```
 
 ### Call API with System Account via JWT
 
-```
+```bash
 # Create service account
 gcloud iam service-accounts create service-gft-data-analysis --display-name "GFT Data Analysis Trigger"
 
@@ -130,7 +130,7 @@ gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
 
 ### Test with JWT
 
-```
+```bash
 npm run test-auth-jwt
 ```
 
@@ -138,20 +138,20 @@ npm run test-auth-jwt
 
 - Enable API first using following link: https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com or command line: `gcloud services enable cloudfunctions.googleapis.com`.
 
-```
+```bash
 gcloud beta functions deploy triggerDataflowFn --trigger-bucket=gs://${GCP_INPUT_BUCKET}
 ```
 
 ### Once Cloud Function deployed, perform a simple test  
 Copy datafile into the ./input/ directory.
 
-```
+```bash
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2017.csv gs://${GCP_INPUT_BUCKET}/trades/
 ```
 Check if Dataflow job is triggered. Once completed, check if data for 2017 year is available in BigQuery (`trades` table).  
 You can repeat the same for file `trades_2018.csv`.  
 
-```
+```bash
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2018.csv gs://${GCP_INPUT_BUCKET}/trades/
 ```
 
