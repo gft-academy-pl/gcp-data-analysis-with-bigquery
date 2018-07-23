@@ -171,8 +171,8 @@ SELECT t.year, t.region, count(*) number_of_transactions,
 	GROUP BY t.year, t.region
 ```
 
-### Emergency  script creating all above BigQuery objects
-
+### Emergency script creating all above BigQuery objects
+Run below script in Google Cloud Shell in case you don't want to use BigQuery UI
 ```bash
 #create dataset
 bq mk gft_academy_trades_analysis
