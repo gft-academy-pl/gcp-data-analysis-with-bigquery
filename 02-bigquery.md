@@ -73,7 +73,7 @@ Multiple wildcard URIs --> for parallel processing (services like Hadoop on Goog
 	`'gs://my-bucket/file-name-1-*.json','gs://my-bucket/file-name-2-*.json','gs://my-bucket/file-name-3-*.json’`  
 
 Refer the link for import/export limitations:  
-	https://cloud.google.com/bigquery/quotas
+	https://console.cloud.google.com/bigquery
 
 ### BigQuery supports partitioning feature.
 ![Partitioning](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Partitioning.png?raw=true)  
