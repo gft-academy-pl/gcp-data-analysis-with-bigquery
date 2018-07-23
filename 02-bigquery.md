@@ -118,7 +118,7 @@ BigQuery API is automatically enabled in new projects - check it in APIs & Servi
 > ![tradesTableCreate](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/trades_table.PNG?raw=true)  
 
 Review data in `trades` table:  
-```
+```sql
 SELECT year, count(*) number_of_transactions
 FROM gft_academy_trades_analysis.trades
 GROUP BY year
@@ -131,7 +131,7 @@ ORDER BY year DESC
 > ![ratesTableCreate](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/rates_table.PNG?raw=true)  
 
 Review data in `rates` table:  
-```
+```sql
 SELECT publication_date, currency_Code, multiplier, avg_rate
 FROM gft_academy_trades_analysis.rates
 ORDER BY publication_date desc, currency_code
@@ -141,7 +141,7 @@ LIMIT 100
 ### Create floowing views - replace {GOOGLE_CLOUD_PROJECT} with your project-id.
 The views will be used later in order to create a charts in Data Studio.  
 
-```
+```sql
 CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_client` AS
 SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
 	SELECT a.year, a.client, a.number_of_transactions, a.value_mld_PLN,
@@ -156,7 +156,7 @@ SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
 ) AS b WHERE b.tran_rank <= 10
 ```
   
-```
+```sql
 CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_region` AS
 SELECT t.year, t.region, count(*) number_of_transactions, 
 	ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN
