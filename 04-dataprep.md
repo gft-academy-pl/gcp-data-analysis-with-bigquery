@@ -114,18 +114,21 @@ After processing job is done and you have checked *Profile Results* checkbox, yo
 
 ### Exercises
 
-As Dataprep creates a Dataflow pipeline underneath in order to process data, enable Dafalow API using command line: `gcloud services enable dataflow.googleapis.com` or [console/UI](https://console.cloud.google.com/apis/library/dataflow.googleapis.com). 
+As Dataprep creates a Dataflow pipeline underneath in order to process data, enable Dafalow API using command line: `gcloud services enable dataflow.googleapis.com` or [console/UI](https://console.cloud.google.com/apis/library/dataflow.googleapis.com).  
+
+Launch Dataprep tool: https://console.cloud.google.com/dataprep  
   
-1. Create flow **LoadTradesIntoBQ** using file below and import data into the dataset on [training platform](https://clouddataprep.com/). Replace _`{GCP_INPUT_BUCKET}`_ with your input bucket name.
+1. Create flow named **LoadTradesIntoBQ** and using below file import data into the dataset. Replace _`{GCP_INPUT_BUCKET}`_ with your input bucket name.
+
    ```
       gs://{GCP_INPUT_BUCKET}/trades/trades_2016.csv
    ```
  
 2. Review data using Dataprep's histograms.
 3. Create a recipe and put following filters in order to clean data:
-    * region IS NOT NULL
-    * status IS NOT NULL
-4. Convert securityId, year columns to integer
+    * _region_ IS NOT NULL
+    * _status_ IS NOT NULL
+4. Convert _securityId_, _year_ columns to integer
 5. Set output options (replace _`{GOOGLE_CLOUD_PROJECT}`_ with your project_id): 
    ```
       (BigQuery: {GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades)
