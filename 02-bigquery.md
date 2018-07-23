@@ -125,7 +125,7 @@ GROUP BY year
 ORDER BY year DESC
 ```
 
-### Attach CSV files as table with name `rates`.
+### Attach CSV files as table named `rates`.
 
 >**Create table with following BigQuery options:**  
 > ![ratesTableCreate](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/rates_table.PNG?raw=true)  
