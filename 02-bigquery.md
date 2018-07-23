@@ -117,7 +117,7 @@ BigQuery API is automatically enabled in new projects - check it in APIs & Servi
 >**Create table with following BigQuery options:**  
 >* Data:  
 >	* Source Data: Create from source  
->	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/trades_arch.csv  
+>	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/trades/trades_arch.csv  
 >	* File format: CSV  
 >* Table:  
 >	* Table name: trades  
@@ -143,7 +143,7 @@ ORDER BY year DESC
 >**Create table with following BigQuery options:**  
 >* Data:  
 >	* Source Data: Create from source  
->	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/rates_*.csv  
+>	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/rates/rates_*.csv  
 >	* File format: CSV  
 >* Table:  
 >	* Table name: rates  
