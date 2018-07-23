@@ -14,7 +14,7 @@
 
 BigQuery is built on top of Dremel technology which has been in production internally in Google since 2006. Dremel is Google’s interactive ad-hoc query system for analysis of read-only nested data.
 
-![BQArchitecture](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/bigquery-architecture.png)
+![BQArchitecture](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/bigquery-architecture.png?raw=true)
 
 BigQuery and Dremel share the same underlying architecture. By incorporating columnar storage and tree architecture of Dremel, BigQuery offers unprecedented performance. But, BigQuery is much more than Dremel. Dremel is just an execution engine for the BigQuery. In fact, BigQuery service leverages Google’s innovative technologies like Borg, Colossus, Capacitor, and Jupiter. As illustrated above, a BigQuery client (typically BigQuery Web UI or bg command-line tool or REST APIs) interact with Dremel engine via a client interface. Borg - Google’s large-scale cluster management system - allocates the compute capacity for the Dremel jobs. Dremel jobs read data from Google’s Colossus file systems using Jupiter network, perform various SQL operations and return results to the client.
 
@@ -96,11 +96,11 @@ Sharding tables in BigQuery means placing the data into multiple tables with the
 ### BigQuery pricing
 BigQuery charges for data storage, streaming inserts, and for querying data, but loading and exporting data are free of charge.
 
-![PricingStorage](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/pricing%20-%20storage.png)
+![PricingStorage](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/pricing%20-%20storage.png?raw=true)
 
 For querying data two different pricing options are possible:
 
-![PricingQuery](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/pricing%20-%20query.png)
+![PricingQuery](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/pricing%20-%20query.png?raw=true)
 
 Pricing guide: https://cloud.google.com/bigquery/pricing
 
@@ -115,20 +115,7 @@ BigQuery API is automatically enabled in new projects - check it in APIs & Servi
 ### Create `trades` table in Bigquery - import data from file.
 
 >**Create table with following BigQuery options:**  
->* Data:  
->	* Source Data: Create from source  
->	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/trades/trades_arch.csv  
->	* File format: CSV  
->* Table:  
->	* Table name: trades  
->	* Table type: Native table  
->* Schema:  
->	* Pick option: Automatically detect  
->* Options:  
->	* Header rows to skip: 1  
->	* Numbers of errors allowed: 0  
->	* Write preference: Write if empty  
->	* Destination Encryption: Default  
+> ![tradesTableCreate](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/trades_table.PNG?raw=true)  
 
 Review data in `trades` table:  
 ```
@@ -141,20 +128,7 @@ ORDER BY year DESC
 ### Create `rates` table in Bigquery - import data from file.
 
 >**Create table with following BigQuery options:**  
->* Data:  
->	* Source Data: Create from source  
->	* Location: Google Cloud Storage --> gs://${GCP_INPUT_BUCKET}/rates/rates_*.csv  
->	* File format: CSV  
->* Table:  
->	* Table name: rates  
->	* Table type: External table  
->* Schema:  
->	* Pick option: Automatically detect  
->* Options:  
->	* Header rows to skip: 1  
->	* Numbers of errors allowed: 0  
->	* Write preference: Write if empty  
->	* Destination Encryption: Default  
+> ![ratesTableCreate](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/rates_table.PNG?raw=true)  
 
 Review data in `rates` table:  
 ```
