@@ -74,15 +74,20 @@ Template selection is available
 4. Add **linear** trend line to both series
 5. Pick **Show axis name** for both Y-Axes
 6. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated number of transaction and trades value per year_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
+7. Click **VIEW** button to preview the final result
 
 ![Chart1](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart1.png?raw=true)
 	
-### Chart 2 - Ten the most active clients (by number of transactions) for a given year
-1. Add new page to the report.
-2. Using `transaction_by_year_client` view, add a bar chart to the page and set following data settings:
-    * Dimention: client
-    * Data: SUM(value_mld_PLN) --> Trade Value (mld PLN)
-            SUM(number_of_transactions) --> Num of transations
+### Chart 2 - The 10 most active clients (by number of transactions) for a given year
+1. Click **EDIT** to return to Report editor. Select **New page** from **Page** menu.
+2.  Select **Bar chart** from **Insert** menu. Position the crosshairs on the second page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
+    * Data Source: _transaction_by_year_client_
+    * Dimension: _client_
+    * Metric: _SUM(value_mld_PLN)_
+            _SUM(number_of_transactions)_
+3. Click **SUM** button near both metric names to add column aliases (**name** field):
+ 	* _SUM(value_mld_PLN)_ --> Trade Value (bn PLN)
+	* _SUM(number_of_transactions)_ --> Number of transations
 3. For one of the series, set right-hand axis
 4. Pick "Show axis name" for both axis
 5. Add a control filter object to the chart and set following data settings:
