@@ -127,19 +127,20 @@ Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to sha
  
  ![BrowseFiles](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_browse-files.png?raw=true)
  
-2. Click **Add new Recipe** button and then **Edit Receipe** in order to run dataset editor.
+2. Click **Add new Recipe** button ...  
 
  ![AddNewRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/AddNewRecipe.png?raw=true)
+ ... and then **Edit Receipe** in order to run dataset editor.  
  
  ![EditRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/EditRecipe.PNG?raw=true)
 
 3. Delete all rows where _region_ values are missing.  
   
-Click black field on the bar below _region_ header - _Suggestions_ window will appear on the right hand side. Click **Add** button on first suggestion (_Delete rows_) to add new transformation to the recipe.
+Click black field on the bar below _region_ header -> _Suggestions_ window will appear on the right hand side. Click **Add** button on first suggestion (_Delete rows_) to add new transformation to the recipe.
 
  ![RegionDeleteNulls](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/RegionDeleteNulls.png?raw=true)
 
-Once added, missing rows in _region_ column should disappear from the editor.
+Once added, missing rows in _region_ column should disappear from the sample.
 
 The same can be done manually: 
  * click _Recipe_ icon (placed on the right-top corner of the editor), and then click **Add New Step** button
