@@ -51,6 +51,8 @@ Template selection is available
 
 ## Exercises
 
+### Add Report Data Sources
+
 1. Open Data Studio editor: https://datastudio.google.com. You are already on the Reports home page. 
 2. Click the blue plus button in the bottom right corner to create a new report. Click Untitled Report title on top of the screen and change title to GFT Academy.
 3. Click **CREATE NEW DATA SOURCE** button and select BigQuery connector panel. 
