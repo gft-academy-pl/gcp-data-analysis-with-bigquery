@@ -56,8 +56,8 @@ Template selection is available
 1. Open Data Studio editor: https://datastudio.google.com. You are already on the Reports home page. 
 2. Click the blue plus button in the bottom right corner to create a new report. Click Untitled Report title on top of the screen and change title to GFT Academy.
 3. Click **CREATE NEW DATA SOURCE** button and select BigQuery connector panel. 
-4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [trades]** and then click **CONNECT** button to add trades table to the dashboard. Review schema definition and click **ADD TO REPORT**
-5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add two more views: transaction_by_year_client and transaction_by_year_region.
+4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [trades]** and then click **CONNECT** button to add _trades_ table to the dashboard. Review schema definition and click **ADD TO REPORT**
+5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add two more views: _transaction_by_year_client_ and _transaction_by_year_region_.
 
 ### Chart 1 - Cumulated number of transaction and trades value per year
 	
@@ -68,8 +68,8 @@ Template selection is available
        * _SUM(value_mld_PLN)_
        * _SUM(number_of_transactions)_
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
- 	* SUM(value_mld_PLN) --> Trade Value (mld PLN)
-	* SUM(number_of_transactions) --> Number of transations
+ 	* _SUM(value_mld_PLN)_ --> Trade Value (mld PLN)
+	* _SUM(number_of_transactions)_ --> Number of transations
 3. Switch to **STYLE** pane. For second series set right-hand axis
 4. Add **linear** trend line to both series
 5. Pick **Show axis name** for both Y-Axes
