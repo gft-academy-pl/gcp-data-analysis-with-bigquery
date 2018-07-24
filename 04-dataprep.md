@@ -127,7 +127,7 @@ Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to sha
  
  ![BrowseFiles](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_browse-files.png?raw=true)
  
-2. Review data using Dataprep's histograms.
+2. Click **Add new Recipe** button and then **Edit Receipe**. Review data using Dataprep's histograms.
 3. Create a recipe and put following filters in order to clean data:
     * _region_ IS NOT NULL
     * _status_ IS NOT NULL
