@@ -90,12 +90,12 @@ Template selection is available
  	* _SUM(value_mld_PLN)_ --> Trade Value (bn PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
 4. Switch to **STYLE** pane. Turn on **Show axes** and **Double** in **Axes** section
-5. Pick **Show axis name** for both Y-Axes
+5. Pick **Show axis title** for both Y-Axes
 6. Select **Filter control** from **Insert** menu and draw a rectangle below the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
     * Dimension: _year_
     * Metric: _SUM(number_of_transactions)_
 7. Click **calendar** button near _year_ dimension name to add the column alias. Set the value of **name** field to _Pick a year_
-8. Click **SUM** button near _SUM(number_of_transactions)_ metric name to add the column alias. Set the value of **name** field to _Transactions per year_
+8. Click **SUM** button near _SUM(number_of_transactions)_ metric name to add the column alias. Set the value of **name** field to _Transactions percentage_. Click the **Type** drop-down and select **Percent**.
 9. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _The 10 most active clients (by number of transactions)_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
 
 **Chart 3 - number of transaction for given year - regional structure**
