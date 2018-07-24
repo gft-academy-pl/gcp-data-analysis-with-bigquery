@@ -74,6 +74,8 @@ Template selection is available
 4. Add **linear** trend line to both series
 5. Pick **Show axis name** for both Y-Axes
 6. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated number of transaction and trades value per year_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
+
+![Chart1](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart1.PNG?raw=true)
 	
 ### Chart 2 - Ten the most active clients (by number of transactions) for a given year
 1. Add new page to the report.
