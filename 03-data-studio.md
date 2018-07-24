@@ -89,7 +89,7 @@ Template selection is available
 3. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* _SUM(value_mld_PLN)_ --> Trade Value (bn PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
-4. Switch to **STYLE** pane. Turn on **Show axes** in **Axes** section
+4. Switch to **STYLE** pane. Turn on **Show axes** and **Double** in **Axes** section
 5. Pick **Show axis name** for both Y-Axes
 6. Select **Filter control** from **Insert** menu and draw a rectangle below the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
     * Dimension: _year_
