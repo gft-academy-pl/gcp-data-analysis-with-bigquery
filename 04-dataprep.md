@@ -179,8 +179,8 @@ Script version:
  ```
 
 7. Click **Run job** button (right-top corner of the editor) and provide following setting:
-* uncheck **Profile Results** checkbox - our goal is to automate execution of the flow, so we don't want to gather profile details
-* in **Publishing Actions** section, put following BigQuery location: _{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades)_ with option _Append to this table every run_ as it is shown below and click **Update** button.  
+  * uncheck **Profile Results** checkbox - our goal is to automate execution of the flow, so we don't want to gather profile details
+  * in **Publishing Actions** section, put following BigQuery location: _{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades)_ with option _Append to this table every run_ as it is shown below and click **Update** button.  
 
  ![PublishingAction](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/PublishingActions.png?raw=true)
 
@@ -190,7 +190,7 @@ Script version:
     - pick a dataset (_gft_academy_trades_analysis_) and table (_trades_)  
     - choose _Append to this table every run_ option  
     - click and **Update** button  
- * Click **Run Job** button (right-bottow corner)
+  * Click **Run Job** button (right-bottow corner)
 
 8. Review job status tab in Dataprep tool.
 9. Make sure data is loaded into BigQuery. 
