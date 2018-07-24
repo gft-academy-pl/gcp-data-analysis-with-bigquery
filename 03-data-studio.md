@@ -59,9 +59,10 @@ Template selection is available
 4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [trades]** and then click **CONNECT** button to add trades table to the dashboard. Review schema definition and click **ADD TO REPORT**
 5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add two more views: transaction_by_year_client and transaction_by_year_region.
 
-**Chart 1 - cumulated number of transaction and trades value per year**
+### Chart 1 - cumulated number of transaction and trades value per year
 	
-1. Using `transaction_by_year_region` view, add a series chart to the page and set following data settings:
+1. Select **Time series** from **Insert** menu and draw chart boundries. In the DATA properties pane on the right, click on the field for each setting and change to the following:
+    * Data Source: `transaction_by_year_region`
     * Dimention: year
     * Data: SUM(value_mld_PLN) --> Trade Value (mld PLN)
             SUM(number_of_transactions) --> Num of transations
