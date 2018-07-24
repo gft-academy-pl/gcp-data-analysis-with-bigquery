@@ -118,7 +118,7 @@ As Dataprep creates a Dataflow pipeline underneath in order to process data, ena
 
 Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to share account information with Trifacta and allow access to project data. Click on your Google credentials to sign in. Make sure that you are still in your newly created gft academy project before you agree to create bucket for Dataprep intermediate data.
   
-### Create Flow in Dataprep and import data to dataset
+#### Create Flow in Dataprep and import data to dataset
 Click **Create Flow** button and name it **LoadTradesIntoBQ**. Click on **Import & Add Datasets** button, then click **GCS** icon on left menu to browse for the data files you uploaded to Google Cloud Storage (Replace _`{GCP_INPUT_BUCKET}`_ with your input bucket name):
 
    ```
@@ -128,7 +128,7 @@ Click **Create Flow** button and name it **LoadTradesIntoBQ**. Click on **Import
  
  ![BrowseFiles](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_browse-files.png?raw=true)
  
-### Run data editor
+#### Run data editor
 Click **Add new Recipe** button ...  
 
  ![AddNewRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/AddNewRecipe.png?raw=true)
@@ -136,7 +136,7 @@ Click **Add new Recipe** button ...
  
  ![EditRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/EditRecipe.PNG?raw=true)
 
-### Delete all rows where _region_ values are missing.  
+#### Delete all rows where _region_ values are missing.  
 Click black field on the bar below _region_ header -> _Suggestions_ window will appear on the right hand side. Click **Add** button on first suggestion (_Delete rows_) to add new transformation to the recipe.  
 
  ![HistoBlackField](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/HistoBlackField.png?raw=true)  
@@ -155,7 +155,7 @@ The same can be done manually:
  filter type: custom rowType: single row: ismissing([region]) action: Delete
  ```
 
-### Delete all rows where _status_ values are missing.  
+#### Delete all rows where _status_ values are missing.  
 This is very similar step to above one. Perform the same steps on _status_ column.  
 
 If you prefer manual approach, here is a script to be pasted into the `Search` field in the _Recipe_ window. 
@@ -163,7 +163,7 @@ If you prefer manual approach, here is a script to be pasted into the `Search` f
  filter type: custom rowType: single row: ismissing([status]) action: Delete
  ```
   
-### Convert _securityId_ datatype to Integer.  
+#### Convert _securityId_ datatype to Integer.  
 Column _securityId_ was detected in Dataprep as a ZIP datatype, while in BigQuery (which is a tardet) as an Integer. To load data into BigQuery, datatypes have to be matching, thus convert _securityId_ column to appropriative datatype.  
   
 Click on the arrow next to column name (header) and pick `Change type --> Integer` from the menu. 
@@ -177,7 +177,7 @@ Script version:
  settype col: securityId type: 'Integer'
  ```
 
-### Convert _year_ datatype to Integer. 
+#### Convert _year_ datatype to Integer. 
 Similar problem occurs for _year_ column - Dataprep recognized this column as Date/Time, but in BigQuery the column has Integer datatype. Provide one more step to convert _year_ column - follow the same step to above.
 
 Script version:
@@ -185,7 +185,7 @@ Script version:
  settype col: year type: 'Integer'
  ```
 
-### Run job.  
+#### Run job.  
 Click **Run job** button (right-top corner of the editor) and provide following setting:
   - uncheck **Profile Results** checkbox - our goal is to automate execution of the flow, so we don't want to gather profile details
   - in **Publishing Actions** section, put following BigQuery location: _{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades_ with option _Append to this table every run_ as it is shown below and click **Update** button.  
@@ -202,7 +202,7 @@ In order to do that, follow the steps:
 Click **Run Job** button (right-bottow corner).   
 _Details_ Window should appear on right-hand side. You can track a progress (statuses) in Dataprep.
 
-### Make sure data is loaded into BigQuery. 
+#### Make sure data is loaded into BigQuery. 
 Following query should return  69148 rows fow 2016 year.  
 
 ```sql
