@@ -59,17 +59,20 @@ Template selection is available
 4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [trades]** and then click **CONNECT** button to add trades table to the dashboard. Review schema definition and click **ADD TO REPORT**
 5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add two more views: transaction_by_year_client and transaction_by_year_region.
 
-### Chart 1 - cumulated number of transaction and trades value per year
+### Chart 1 - Cumulated number of transaction and trades value per year
 	
 1. Select **Time series** from **Insert** menu and draw chart boundries. In the DATA properties pane on the right, click on the field for each setting and change to the following:
     * Data Source: `transaction_by_year_region`
     * Dimention: year
-    * Data: SUM(value_mld_PLN) --> Trade Value (mld PLN)
-            SUM(number_of_transactions) --> Num of transations
-2. For one of the series, set right-hand axis
-3. Add trend lines (linear) to both series
-4. Pick "Show axis name" for both axis
-5. Add text field and provide a title for the chart.
+    * Metric: SUM(value_mld_PLN)
+              SUM(number_of_transactions)
+2. Click **SUM** button near both metric names to add column aliases (**name** field):
+ 	SUM(value_mld_PLN) --> Trade Value (mld PLN)
+        SUM(number_of_transactions) --> Num of transations
+3. Switch to **STYLE** tab. For second series set right-hand axis
+4. Add **linear** trend line to both series
+5. Pick "Show axis name" for both Y-Axes
+6. Select **Text** from **Insert** menu and draw text field above chart rectangle. Provide following title for the chart: Cumulated number of transaction and trades value per year
 	
 **Chart 2 - ten the most active clients (by number of transactions) for a given year**
 1. Add new page to the report.
