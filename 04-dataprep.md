@@ -123,6 +123,7 @@ Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to sha
    ```
       gs://{GCP_INPUT_BUCKET}/trades/trades_2016.csv
    ```
+ Click plus button near trades_2016.csv file name to create dataset.
  
 2. Review data using Dataprep's histograms.
 3. Create a recipe and put following filters in order to clean data:
