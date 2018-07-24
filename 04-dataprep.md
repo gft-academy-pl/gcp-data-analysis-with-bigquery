@@ -127,7 +127,7 @@ Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to sha
  
  ![BrowseFiles](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_browse-files.png?raw=true)
  
-2. Click **Add new Recipe** button and then **Edit Receipe** in order to load dataset editor.
+2. Click **Add new Recipe** button and then **Edit Receipe** in order to run dataset editor.
 
  ![AddNewRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/AddNewRecipe.png?raw=true)
  
