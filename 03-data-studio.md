@@ -65,8 +65,9 @@ Template selection is available
     Data Source: `transaction_by_year_region`
     Dimention: year
     Metric:
-	* SUM(value_mld_PLN)
-	* SUM(number_of_transactions)
+       * SUM(value_mld_PLN)
+       * SUM(number_of_transactions) --> Num of transations
+       * SUM(number_of_transactions)
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* SUM(value_mld_PLN) --> Trade Value (mld PLN)
         * SUM(number_of_transactions) --> Num of transations
