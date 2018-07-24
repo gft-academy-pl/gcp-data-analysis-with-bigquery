@@ -98,6 +98,8 @@ Template selection is available
 8. Click **SUM** button near _SUM(number_of_transactions)_ metric name to add the column alias. Set the value of **name** field to _Transactions percentage_. Click the **Type** drop-down and select **Percent**.
 9. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _The 10 most active clients (by number of transactions)_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
 
+![Chart2](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart2.png?raw=true)
+
 **Chart 3 - number of transaction for given year - regional structure**
 1. Add new page to the report.
 2. Using `transaction_by_year_region` view, add a pie chart to the page and set following data settings:
