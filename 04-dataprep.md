@@ -127,17 +127,71 @@ Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to sha
  
  ![BrowseFiles](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_browse-files.png?raw=true)
  
-2. Click **Add new Recipe** button and then **Edit Receipe**. Review data using Dataprep's histograms.
-3. Create a recipe and put following filters in order to clean data:
-    * _region_ IS NOT NULL
-    * _status_ IS NOT NULL
-4. Convert _securityId_, _year_ columns to integer
-5. Set output options (replace _`{GOOGLE_CLOUD_PROJECT}`_ with your project_id): 
-   ```
-      (BigQuery: {GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades)
-   ```
-6. For the demo purpose, remember to uncheck profile details capturing option before runing a job. 
-7. Run a job. 
+2. Click **Add new Recipe** button and then **Edit Receipe** in order to load dataset editor.
+
+ ![AddNewRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/AddNewRecipe.png?raw=true)
+ 
+ ![EditRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/EditRecipe.PNG?raw=true)
+
+3. Delete all rows where _region_ values are missing.  
+  
+Click black field on the bar below _region_ header - _Suggestions_ window will appear on the right hand side. Click **Add** button on first suggestion (_Delete rows_) to add new transformation to the recipe.
+
+ ![RegionDeleteNulls](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/RegionDeleteNulls.png?raw=true)
+
+Once added, missing rows in _region_ column should disappear from the editor.
+
+The same can be done manually: 
+ * click _Recipe_ icon (placed on the right-top corner of the editor), and then click **Add New Step** button
+
+ ![RecipeNewStep](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/RecipeNewStep.png?raw=true)
+
+ * paste following script into the _Search_ field
+ ```
+ filter type: custom rowType: single row: ismissing([region]) action: Delete
+ ```
+
+4. In the same way, delete all rows where _status_ values are missing.  
+
+If you prefer manual approach, here is a script to be pasted into the `Search` field in the _Recipe_ window. 
+ ```
+ filter type: custom rowType: single row: ismissing([status]) action: Delete
+ ```
+  
+5. Column _securityId_ was detected in Dataprep as a `ZIP` datatype, while in BigQuery (which is a tardet) as an `Integer`. To load data into BigQuery, datatypes have to be matching, thus convert _securityId_ column to appropriative datatype.  
+  
+Click on the arrow next to column name (header) and pick `Change type --> Integer` from the menu. 
+
+ ![RecipeNewStep](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/securityIdChangeType.png?raw=true)
+
+New step should to be added to the recipe.
+
+Script version:
+ ```
+ settype col: securityId type: 'Integer'
+ ```
+
+6. Similar problem occurs for _year_ column - Dataprep recognize this column as `Date/Time`, but in BigQuery the column has `Integer` datatype. Provide one more step to convert _year_ column.
+
+Script version:
+ ```
+ settype col: year type: 'Integer'
+ ```
+
+7. Click **Run job** button (right-top corner of the editor) and provide following setting:
+* uncheck **Profile Results** checkbox - our goal is to automate execution of the flow, so we don't want to gather profile details
+* in **Publishing Actions** section, put following BigQuery location: _{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades)_ with option _Append to this table every run_ as it is shown below and click **Update** button.  
+
+ ![PublishingAction](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/PublishingActions.png?raw=true)
+
+  In order to do that, follow the steps:
+    - click on the **Edit** (pencil) icon
+    - choose a BigQuery as an target storage
+    - pick a dataset (_gft_academy_trades_analysis_) and table (_trades_)
+    - choose _Append to this table every run_ option
+    - click and **Update** button
+ * Click **Run Job** button (right-bottow corner)
+
 8. Review job status tab in Dataprep tool.
 9. Make sure data is loaded into BigQuery. 
 
