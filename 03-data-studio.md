@@ -62,14 +62,14 @@ Template selection is available
 ### Chart 1 - Cumulated number of transaction and trades value per year
 	
 1. Select **Time series** from **Insert** menu and draw chart boundries. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
-	* Data Source: `transaction_by_year_region`
+	* Data Source: transaction_by_year_region
 	* Dimention: year
 	* Metric:
        * SUM(value_mld_PLN)
        * SUM(number_of_transactions)
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* SUM(value_mld_PLN) --> Trade Value (mld PLN)
-	* SUM(number_of_transactions) --> Num of transations
+	* SUM(number_of_transactions) --> Number of transations
 3. Switch to **STYLE** pane. For second series set right-hand axis
 4. Add **linear** trend line to both series
 5. Pick **Show axis name** for both Y-Axes
