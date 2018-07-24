@@ -118,7 +118,7 @@ As Dataprep creates a Dataflow pipeline underneath in order to process data, ena
 
 Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to share account information with Trifacta and allow access to project data. Click on your Google credentials to sign in. Make sure that you are still in your newly created gft academy project before you agree to create bucket for Dataprep intermediate data.
   
-1. Click **Create Flow** button and name it **LoadTradesIntoBQ**. Click on **Import & Add Datasets** button, then **Choose a file** to browse for the data files you uploaded to Google Cloud Storage. Replace _`{GCP_INPUT_BUCKET}`_ with your input bucket name.
+1. Click **Create Flow** button and name it **LoadTradesIntoBQ**. Click on **Import & Add Datasets** button, then click **GCS** icon on left menu to browse for the data files you uploaded to Google Cloud Storage (Replace _`{GCP_INPUT_BUCKET}`_ with your input bucket name):
 
    ```
       gs://{GCP_INPUT_BUCKET}/trades/trades_2016.csv
