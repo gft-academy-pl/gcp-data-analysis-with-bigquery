@@ -124,7 +124,7 @@ Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to sha
       gs://{GCP_INPUT_BUCKET}/trades/trades_2016.csv
    ```
  Click plus button near trades_2016.csv file name to create dataset.
- 
+ ![BrowseFiles](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_browse-files.png?raw=true)
 2. Review data using Dataprep's histograms.
 3. Create a recipe and put following filters in order to clean data:
     * _region_ IS NOT NULL
