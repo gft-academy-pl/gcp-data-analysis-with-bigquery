@@ -63,7 +63,7 @@ Template selection is available
 	
 1. Select **Time series** from **Insert** menu. Position the crosshairs on the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
 	* Data Source: _transaction_by_year_region_
-	* Dimention: _year_
+	* Dimension: _year_
 	* Metric:
        * _SUM(value_mld_PLN)_
        * _SUM(number_of_transactions)_
@@ -71,16 +71,16 @@ Template selection is available
  	* _SUM(value_mld_PLN)_ --> Trade Value (bn PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
 3. Switch to **STYLE** pane. For #2 series set right-hand axis
-4. Add **linear** trend line to both series
+4. Click the **Trendline** drop-down and select **Linear** in both series
 5. Pick **Show axis name** for both Y-Axes
 6. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated number of transaction and trades value per year_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
 7. Click **VIEW** button to preview the final result
 
 ![Chart1](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart1.png?raw=true)
 	
-### Chart 2 - The 10 most active clients (by number of transactions) for a given year
+### Chart 2 - The 10 most active clients (by number of transactions)
 1. Click **EDIT** to return to Report editor. Select **New page** from **Page** menu.
-2.  Select **Bar chart** from **Insert** menu. Position the crosshairs on the second page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
+2. Select **Bar chart** from **Insert** menu. Position the crosshairs on the second page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
     * Data Source: _transaction_by_year_client_
     * Dimension: _client_
     * Metric:
@@ -89,21 +89,23 @@ Template selection is available
 3. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* _SUM(value_mld_PLN)_ --> Trade Value (bn PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
-4. Switch to **STYLE** pane. For #2 series set right-hand axis
+4. Switch to **STYLE** pane. Turn on **Show axes** in **Axes** section
 5. Pick **Show axis name** for both Y-Axes
-6. Add a control filter object to the chart and set following data settings:
-    * Dimention: year --> Pick a year
-    * Data: year
-7. Add text field and provide a title for the chart.
+6. Select **Filter control** from **Insert** menu and draw a rectangle below the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
+    * Dimension: _year_
+    * Metric: _SUM(number_of_transactions)_
+7. Click **calendar** button near _year_ dimension name to add the column alias. Set the value of **name** field to _Pick a year_
+8. Click **SUM** button near _SUM(number_of_transactions)_ metric name to add the column alias. Set the value of **name** field to _Transactions per year_
+9. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _The 10 most active clients (by number of transactions)_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
 
 **Chart 3 - number of transaction for given year - regional structure**
 1. Add new page to the report.
 2. Using `transaction_by_year_region` view, add a pie chart to the page and set following data settings:
-    * Dimention: region
+    * Dimension: region
     * Data: SUM(number_of_transactions) --> Num of transations
     * Sort by: number_of_transactions
 3. Add a control filter object to the chart and set following data settings:
-    * Dimention: year --> Pick a year
+    * Dimension: year --> Pick a year
     * Data: year
 4. Add text field and provide a title for the chart.	 
 
