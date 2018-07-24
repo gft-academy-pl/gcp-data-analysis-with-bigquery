@@ -64,9 +64,9 @@ Template selection is available
 1. Select **Time series** from **Insert** menu and draw chart boundries. In the DATA properties pane on the right, click on the field for each setting and change to the following:
     * Data Source: `transaction_by_year_region`
     * Dimention: year
-    * Metric: 
-    	**SUM(value_mld_PLN)
-        **SUM(number_of_transactions)
+    * Metric:
+    -SUM(value_mld_PLN)
+    -SUM(number_of_transactions)
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
  	SUM(value_mld_PLN) --> Trade Value (mld PLN)
         SUM(number_of_transactions) --> Num of transations
