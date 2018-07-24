@@ -184,12 +184,12 @@ Script version:
 
  ![PublishingAction](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/PublishingActions.png?raw=true)
 
-  In order to do that, follow the steps:
-    - click on the **Edit** (pencil) icon
-    - choose a BigQuery as an target storage
-    - pick a dataset (_gft_academy_trades_analysis_) and table (_trades_)
-    - choose _Append to this table every run_ option
-    - click and **Update** button
+  In order to do that, follow the steps:  
+    - click on the **Edit** (pencil) icon  
+    - choose a BigQuery as an target storage  
+    - pick a dataset (_gft_academy_trades_analysis_) and table (_trades_)  
+    - choose _Append to this table every run_ option  
+    - click and **Update** button  
  * Click **Run Job** button (right-bottow corner)
 
 8. Review job status tab in Dataprep tool.
