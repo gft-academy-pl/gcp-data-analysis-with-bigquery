@@ -116,9 +116,9 @@ After processing job is done and you have checked *Profile Results* checkbox, yo
 
 As Dataprep creates a Dataflow pipeline underneath in order to process data, enable Dafalow API using command line: `gcloud services enable dataflow.googleapis.com` or [console/UI](https://console.cloud.google.com/apis/library/dataflow.googleapis.com).  
 
-Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to share account information with Trifacta and allow access to project data. Make sure that you are still in your newly created gft academy project before you agree to create bucket for Dataprep intermediate data.
+Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to share account information with Trifacta and allow access to project data. Click on your Google credentials to sign in. Make sure that you are still in your newly created gft academy project before you agree to create bucket for Dataprep intermediate data.
   
-1. Create flow named **LoadTradesIntoBQ** and using below file import data into the dataset. Replace _`{GCP_INPUT_BUCKET}`_ with your input bucket name.
+1. Click **Create Flow** button and name it **LoadTradesIntoBQ**. Click on **Import & Add Datasets** button, then **Choose a file** to browse for the data files you uploaded to Google Cloud Storage. Replace _`{GCP_INPUT_BUCKET}`_ with your input bucket name.
 
    ```
       gs://{GCP_INPUT_BUCKET}/trades/trades_2016.csv
