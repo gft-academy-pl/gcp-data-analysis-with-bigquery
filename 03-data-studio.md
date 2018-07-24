@@ -69,7 +69,7 @@ Template selection is available
        * SUM(number_of_transactions)
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* SUM(value_mld_PLN) --> Trade Value (mld PLN)
-        * SUM(number_of_transactions) --> Num of transations
+	* SUM(number_of_transactions) --> Num of transations
 3. Switch to **STYLE** tab. For second series set right-hand axis
 4. Add **linear** trend line to both series
 5. Pick "Show axis name" for both Y-Axes
