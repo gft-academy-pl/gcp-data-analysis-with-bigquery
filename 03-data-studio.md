@@ -61,7 +61,7 @@ Template selection is available
 
 ### Chart 1 - Cumulated number of transaction and trades value per year
 	
-1. Select **Time series** from **Insert** menu and draw chart boundries. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
+1. Select **Time series** from **Insert** menu. Position the crosshairs on the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
 	* Data Source: _transaction_by_year_region_
 	* Dimention: _year_
 	* Metric:
@@ -70,12 +70,12 @@ Template selection is available
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* _SUM(value_mld_PLN)_ --> Trade Value (mld PLN)
 	* _SUM(number_of_transactions)_ --> Number of transations
-3. Switch to **STYLE** pane. For second series set right-hand axis
+3. Switch to **STYLE** pane. For #2 series set right-hand axis
 4. Add **linear** trend line to both series
 5. Pick **Show axis name** for both Y-Axes
-6. Select **Text** from **Insert** menu and draw text field above chart rectangle. Provide following title for the chart: Cumulated number of transaction and trades value per year
+6. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: Cumulated number of transaction and trades value per year
 	
-**Chart 2 - ten the most active clients (by number of transactions) for a given year**
+### Chart 2 - Ten the most active clients (by number of transactions) for a given year
 1. Add new page to the report.
 2. Using `transaction_by_year_client` view, add a bar chart to the page and set following data settings:
     * Dimention: client
