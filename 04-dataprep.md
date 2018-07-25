@@ -132,7 +132,8 @@ Click **Create Flow** button and name it **LoadTradesIntoBQ**. Click on **Import
 Click **Add new Recipe** button ...  
 
  ![AddNewRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/AddNewRecipe.png?raw=true)
- ... and then **Edit Receipe** in order to run dataset editor.  
+ 
+ ... and then **Edit Receipe** in order to run data editor.  
  
  ![EditRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/EditRecipe.PNG?raw=true)
 
@@ -143,7 +144,7 @@ Click black field on the bar below _region_ header -> _Suggestions_ window will 
 
  ![RegionDeleteNulls](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/RegionDeleteNulls.png?raw=true)  
 
-Once added, missing rows in _region_ column should disappear from the sample.
+Once added, missing rows in _region_ column should disappear from the data sample.
 
 The same can be done manually: 
  * click _Recipe_ icon (placed on the right-top corner of the editor), and then click **Add New Step** button
@@ -154,23 +155,26 @@ The same can be done manually:
  ```
  filter type: custom rowType: single row: ismissing([region]) action: Delete
  ```
+ * Click **Add** button
+
+ ![RecipeAddStep](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/RecipeAddStep.png?raw=true)
 
 #### Delete all rows where _status_ values are missing.  
 This is very similar step to above one. Perform the same steps on _status_ column.  
 
-If you prefer manual approach, here is a script to be pasted into the `Search` field in the _Recipe_ window. 
+If you prefer manual approach, here is a script to be pasted into the _Search_ field in the _Recipe_ window. 
  ```
  filter type: custom rowType: single row: ismissing([status]) action: Delete
  ```
   
 #### Convert _securityId_ datatype to Integer.  
-Column _securityId_ was detected in Dataprep as a ZIP datatype, while in BigQuery (which is a tardet) as an Integer. To load data into BigQuery, datatypes have to be matching, thus convert _securityId_ column to appropriative datatype.  
+Column _securityId_ was detected in Dataprep as a ZIP datatype, while in BigQuery (which is a target location) as an Integer. To load data into BigQuery, datatypes have to be matching, thus convert _securityId_ column to appropriative datatype.  
   
 Click on the arrow next to column name (header) and pick `Change type --> Integer` from the menu. 
 
  ![RecipeNewStep](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/securityIdChangeType.png?raw=true)
 
-New step should to be added to the recipe.
+Once done, new step should to be added to the recipe.
 
 Script version:
  ```
@@ -178,7 +182,7 @@ Script version:
  ```
 
 #### Convert _year_ datatype to Integer. 
-Similar problem occurs for _year_ column - Dataprep recognized this column as Date/Time, but in BigQuery the column has Integer datatype. Provide one more step to convert _year_ column - follow the same step to above.
+Similar problem occurs for _year_ column - Dataprep recognized this column as Date/Time, but in BigQuery the same column is an Integer. Provide one more step to convert _year_ column accordingly - follow above steps.
 
 Script version:
  ```
@@ -187,23 +191,24 @@ Script version:
 
 #### Run job.  
 Click **Run job** button (right-top corner of the editor) and provide following setting:
-  - uncheck **Profile Results** checkbox - our goal is to automate execution of the flow, so we don't want to gather profile details
-  - in **Publishing Actions** section, put following BigQuery location: _{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades_ with option _Append to this table every run_ as it is shown below and click **Update** button.  
+* uncheck _Profile Results_ checkbox - our goal is to automate execution of the flow, so we don't want to gather profile details
+
+ ![ProfileResults](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/ProfileResults.png?raw=true)
+
+* in _Publishing Actions_ section, change location to BigQuery _trades_ table. Follow below steps: 
+   - click on the **Edit** (pencil) icon  
+   - choose a BigQuery as an target storage
+   - make sure you are in a project, you created
+   - pick a dataset _gft_academy_trades_analysis_ and then table _trades_
+   - choose _Append to this table every run_ option (right-hand side menu)
+   - click an **Update** button  
 
  ![PublishingAction](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/PublishingActions.png?raw=true)
 
-In order to do that, follow the steps:  
-  - click on the **Edit** (pencil) icon  
-  - choose a BigQuery as an target storage  
-  - pick a dataset (_gft_academy_trades_analysis_) and table (_trades_)  
-  - choose _Append to this table every run_ option  
-  - click and **Update** button  
-  
-Click **Run Job** button (right-bottow corner).   
-_Details_ Window should appear on right-hand side. You can track a progress (statuses) in Dataprep.
+* Click **Run Job** button (right-bottow corner). _Details_ window should appear on right-hand side. You can track a progress (statuses) in Dataprep.
 
 #### Make sure data is loaded into BigQuery. 
-Following query should return  69148 rows fow 2016 year.  
+Run following query in BigQuery - it should return 69 148 rows for 2016 year.  
 
 ```sql
 SELECT year, count(*) number_of_transactions
@@ -212,7 +217,6 @@ WHERE year = 2016
 GROUP BY year
 ORDER BY year DESC
 ```
-
 
 ### Documentation & Resources
 
