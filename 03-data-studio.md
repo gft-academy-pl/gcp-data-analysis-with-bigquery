@@ -86,6 +86,7 @@ Template selection is available
     * Metric:
        * _SUM(value_mld_PLN)_
        * _SUM(number_of_transactions)_
+    * Order: select _Dimension_ then _Ascending_
 3. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* _SUM(value_mld_PLN)_ --> Trade Value (bn PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
