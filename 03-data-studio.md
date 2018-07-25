@@ -74,7 +74,7 @@ Template selection is available
 	* _SUM(number_of_transactions)_ --> Number of transactions
 3. Switch to **STYLE** pane. Turn on **Show axes** and **Double** in **Axes** section
 4. Pick **Show axis name** for both Y-Axes
-5. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated trades value and number of transaction - Top 10 clients_. In **Text Properties** pane change font size to _30px_ and use centered alignment. You can also change background color.
+5. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated trades value and number of transactions - Top 10 clients_. In **Text Properties** pane change font size to _30px_ and use centered alignment. You can also change background color.
 
 ### Chart 2 - FX Rate chart
 	
@@ -97,9 +97,9 @@ Template selection is available
 	* Data Source: _transactions_by_client_
 	* Dimension: _currency_code_
 	* Metric: _SUM(value_PLN)_
-	* Order: _Metric_
+	* Order: _Dimension_ and _Ascending_
 2. Click **ABC** button near _currency_code_ dimension name to add column alias (**name** field): _Pick a currency_.
-3. Click **SUM** button near _AVG(avg_rate)_ metric name. Change **Display as** filed to _Percent of total_
+3. Click **SUM** button near _AVG(avg_rate)_ metric name. Add column alias (**name** field): _Percent of transactions_. Change **Display as** filed to _Percent of total_
 4. Switch to **STYLE** properties pane on the right, change background and font color.
 
 ![Chart2](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart2.png?raw=true)
