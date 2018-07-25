@@ -89,6 +89,19 @@ Template selection is available
 4. Set **Missing Data** to _Linear Interpolation_ in order to display missing weekend dates correctly.
 5. In **Left Y_Axis** section enable **Show axis title** and change **Custom Tick Interval** to 2
 
+### Date range filter
+1. Select **Date range** from **Insert** menu. Position the crosshairs somwhere between both charts , then draw the rectangle. In the **STYLE** properties pane on the right, change background and font color.
+
+### Currency filter
+1. Select **Filter control** from **Insert** menu. Position the crosshairs somwhere between both charts , then draw the rectangle. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
+	* Data Source: _transactions_by_client_
+	* Dimension: _currency_code_
+	* Metric: _SUM(value_PLN)_
+	* Order: _Metric_
+2. Click **ABC** button near _currency_code_ dimension name to add column alias (**name** field): _Pick a currency_.
+3. Click **SUM** button near _AVG(avg_rate)_ metric name. Change **Display as** filed to _Percent of total_
+4. Switch to **STYLE** properties pane on the right, change background and font color.
+
 ![Chart2](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart2.png?raw=true)
 
 ## Navigation
