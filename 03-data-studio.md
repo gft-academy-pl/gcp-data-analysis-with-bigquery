@@ -84,49 +84,10 @@ Template selection is available
 	* Time Dimension: _publication_date_
 	* Breakdown Dimension: _currency_code_
 	* Metric: _AVG(avg_rate)_
-2. Click **SUM** button near both metric names to add column aliases (**name** field):
- 	* _SUM(value_mld_PLN)_ --> Trade Value (PLN)
-	* _SUM(number_of_transactions)_ --> Number of transactions
-3. Switch to **STYLE** pane. For #2 series set right-hand axis
-4. Click the **Trendline** drop-down and select **Linear** in both series
-5. Pick **Show axis name** for both Y-Axes
-6. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated number of transaction and trades value per year_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
-7. Click **VIEW** button to preview the final result
-
-
-
-### Chart 1 - Cumulated number of transaction and trades value per year
-	
-1. Select **Time series** from **Insert** menu. Position the crosshairs on the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
-	* Data Source: _transaction_by_year_region_
-	* Dimension: _year_
-	* Metric:
-       * _SUM(value_mld_PLN)_
-       * _SUM(number_of_transactions)_
-2. Click **SUM** button near both metric names to add column aliases (**name** field):
- 	* _SUM(value_mld_PLN)_ --> Trade Value (PLN)
-	* _SUM(number_of_transactions)_ --> Number of transactions
-3. Switch to **STYLE** pane. For #2 series set right-hand axis
-4. Click the **Trendline** drop-down and select **Linear** in both series
-5. Pick **Show axis name** for both Y-Axes
-6. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated number of transaction and trades value per year_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
-7. Click **VIEW** button to preview the final result
-
-![Chart1](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart1.png?raw=true)
-	
-### Chart 2 - The 10 most active clients (by number of transactions)
-1. Click **EDIT** to return to Report editor. Select **New page** from **Page** menu.
-2. Select **Bar chart** from **Insert** menu. Position the crosshairs on the second page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
-    * Data Source: _transaction_by_year_client_
-    * Dimension: _client_
-    * Metric:
-       * _SUM(value_mld_PLN)_
-       * _SUM(number_of_transactions)_
-    * Order: select _Dimension_ then _Ascending_
-3. Click **AVG** button near _AVG(avg_rate)_ metric name to add column alias (**name** field): price (PLN)
-4. Switch to **STYLE** pane. Increase **Number of series** to _20_.
-5. Set **Missing Data** to _Linear Interpolation_ in order to display missing weekend dates correctly.
-6. In **Left Y_Axis** section enable **Show axis title** and change **Custom Tick Interval** to 2
+2. Click **AVG** button near _AVG(avg_rate)_ metric name to add column alias (**name** field): price (PLN)
+3. Switch to **STYLE** pane. Increase **Number of series** to _20_.
+4. Set **Missing Data** to _Linear Interpolation_ in order to display missing weekend dates correctly.
+5. In **Left Y_Axis** section enable **Show axis title** and change **Custom Tick Interval** to 2
 
 ![Chart2](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart2.png?raw=true)
 
