@@ -138,37 +138,40 @@ ORDER BY publication_date desc, currency_code
 LIMIT 100
 ```
 
-### Save analytical queries as BigQuery views
+### Save analytical query as BigQuery view
  
-Create views which Data Studio will use as a data source. Please remember to replace {GOOGLE_CLOUD_PROJECT} with your project-id
+Create view which Data Studio will use as a data source. Please remember to replace {GOOGLE_CLOUD_PROJECT} with your project-id
   
-Ten the most active clients for given year.  
+View returns client's turnover converted to local currency
 ```sql
-CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_client` AS
-SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
-	SELECT a.year, a.client, a.number_of_transactions, a.value_mld_PLN,
-	ROW_NUMBER() OVER(PARTITION BY a.year ORDER BY a.value_mld_PLN DESC) tran_rank FROM(
-		SELECT t.year, t.client, COUNT(*) number_of_transactions,
-		ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN
-		FROM `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades` AS t
-		JOIN `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates` AS r
-		ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP)
-	) WHERE t.region IS NOT NULL and t.status IS NOT NULL
-	GROUP BY t.year, t.client) AS a
-) AS b WHERE b.tran_rank <= 10
-```
-
-  
-Cumulated number of transactions and trades value (in mld PLN) for given region and year.  
-```sql
-CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_region` AS
-SELECT t.year, t.region, count(*) number_of_transactions, 
-	ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN
-	FROM `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades` as t
-	JOIN `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates` as r
-	ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP))
-	WHERE t.region IS NOT NULL and t.status IS NOT NULL
-	GROUP BY t.year, t.region
+CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transactions_by_year` AS
+SELECT 
+	t.tradeDate
+	,count(*) number_of_transactions
+	,SUM(t.value * r.multiplier * r.avg_rate) value_PLN
+	,r.currency_code
+	,t.client
+FROM `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades` AS t
+INNER JOIN `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates` AS r ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP))
+	AND t.currency = r.currency_code
+INNER JOIN (
+	SELECT 
+		t.client
+		,ROW_NUMBER() OVER (ORDER BY SUM(t.value * r.multiplier * r.avg_rate) DESC) transaction_rank
+	FROM `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades` AS t
+	JOIN `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates` AS r ON t.tradeDate = CAST(r.publication_date AS TIMESTAMP)
+		AND t.currency = r.currency_code
+	WHERE t.region IS NOT NULL
+		AND t.STATUS IS NOT NULL
+	GROUP BY t.client
+	) top_ten ON top_ten.client = t.client
+WHERE top_ten.transaction_rank <= 10
+	AND t.region IS NOT NULL
+	AND t.STATUS IS NOT NULL
+GROUP BY t.tradeDate
+	,t.region
+	,r.currency_code
+	,t.client
 ```
 
 ### Emergency script creating all above BigQuery objects
