@@ -12,7 +12,7 @@
 
 Google Cloud Functions is a serverless execution environment for building and connecting cloud services. With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your Cloud Function is triggered when an event being watched is fired. Your code executes in a fully managed environment. There is no need to provision any infrastructure or worry about managing any servers.
 
-Cloud Functions are now in GA relase since 24th of July, the only language available in GA is Javascript and execute in a Node.js v6.14.0 on Google Cloud Platform. However right now as a Beta release you can write functions j=in JS and execute it in Node.js 8.11.1 or Python 3.7.0. If you are writing functions in JS you can take your Cloud Function and run it in any standard Node.js runtime which makes both portability and local testing a breeze.
+Cloud Functions are now in GA relase since 24th of July, the only language available in GA is Javascript and execute in a Node.js v6.14.0 on Google Cloud Platform. However right now as a part of the Beta release you can write functions in JS and execute it in Node.js 8.11.1 or Python 3.7.0. If you are writing functions in JS you can take your Cloud Function and run it in any standard Node.js runtime which makes both portability and local testing a breeze.
 
 ### Serverless
 
