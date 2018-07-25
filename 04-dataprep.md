@@ -45,26 +45,12 @@ Dataset can be imported from:
 * Google Cloud Storage (GCS) - available formats: CSV/JSON/Avro; compression possible for CSV/JSON foramts
 * BigQuery - Dataprep output has to be matching with BigQuery table's schema
 
-### Samples - Our Working Material
-
-To prevent overwhelming the client or significantly impacting performance, *Cloud Dataprep* generates one or more samples of the data for display and manipulation in the client application. Of course, you can change the size of samples, the scope of the sample, and the method by which the sample is created.
-
-*Cloud Dataprep* support serveral types of samples:
-* **First rows samples** - taken from the first set of rows in the transformed dataset based on the current cursor location in the recipe
-* **Random samples** - random selection of a subset of rows in the dataset
-* **Filter-based samples** - samples generated for the set of values taht matches provided filter criteria
-* **Anomaly-based samples** - consists of mismatched or missing data or both in one or more columns
-* **Stratified samples** - constructed from all unique values within a column and create a sample that contains the unique values, up to the sample size limit. The distribution of the column values in the sample reflects the distribution of the column values in the dataset. Sampled values are sorted by frequency, relative to the specified column.
-It can be also filtered
-* **Cluster-based samples** -  built from collection of contiguous rows in the dataset that corresponds to a random selection from the unique values in a column. All rows corresponding to the selected unique values appear in the sample, up to the maximum sample size. This sampling is useful for time-series analysis and advanced aggregations.
-It can be also filtered.
-
 ### Transformation recipe - brew your perfect data source
 
 In *Cloud Dataprep* all operations which you will be doing on raw input data are recorded as kind of recipe (literally). 
 You can think of transforming raw data info table as of brewing your homemade beer.
 
-Typically, *Recipe* looks more or less lke this:
+Typically, *Recipe* looks more or less like this:
 
 ![Recipe Example](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_recipe.png)
 
@@ -104,15 +90,29 @@ Using *Cloud Dataprep* we are also able to enrich our data in a simmilar manner 
 
 #### Validate & Run
 
-When your recipe is complete, the last thing you need to do is just click *Run Job* button.
+When recipe is complete, the last thing you need to do is just click *Run Job* button.
 
 ![Run Job Button](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_run-job-button.png)
 
-Remember that *Cloud Dataprep* also allows you to **schedule** your jobs!
-
-After processing job is done and you have checked *Profile Results* checkbox, you will be provided with *Data Profile View* which consists of numerous statistics that are describing your final dataset.
+It worth to notice that *Cloud Dataprep* allows to **schedule** jobs.
 
 ![Data Profile](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_data-profile.png)
+
+### Samples - Our Working Material
+
+To prevent overwhelming the client or significantly impacting performance, *Cloud Dataprep* generates one or more samples of the data for display and manipulation in the client application. Of course, you can change the size of samples, the scope of the sample, and the method by which the sample is created.
+
+*Cloud Dataprep* support serveral types of samples:
+* **First rows samples** - taken from the first set of rows in the transformed dataset based on the current cursor location in the recipe
+* **Random samples** - random selection of a subset of rows in the dataset
+* **Filter-based samples** - samples generated for the set of values taht matches provided filter criteria
+* **Anomaly-based samples** - consists of mismatched or missing data or both in one or more columns
+* **Stratified samples** - constructed from all unique values within a column and create a sample that contains the unique values, up to the sample size limit. The distribution of the column values in the sample reflects the distribution of the column values in the dataset. Sampled values are sorted by frequency, relative to the specified column.
+It can be also filtered
+* **Cluster-based samples** -  built from collection of contiguous rows in the dataset that corresponds to a random selection from the unique values in a column. All rows corresponding to the selected unique values appear in the sample, up to the maximum sample size. This sampling is useful for time-series analysis and advanced aggregations.
+It can be also filtered.
+  
+After processing job is done and you have checked *Profile Results* checkbox, you will be provided with *Data Profile View* which consists of numerous statistics that are describing your final dataset.
 
 ### Exercises
 
