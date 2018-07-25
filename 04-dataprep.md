@@ -77,7 +77,7 @@ Color codes helps you to define wether data in particular column is incomplete o
 
 By clicking on colored part of histogram, you are able to select all rows of specific category and perfom some transformations on them (ex. fill mising fields with 'N/A'):
 
-![Empty Rows Selcted](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_empty-rows-selected.png)  ![Histogram Fractions](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_histogram-fractions.png)
+![Empty Rows Selcted](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_empty-rows-selected.png)  
 
 ![Replacing Mising Values](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_replacing-missing-values.png)
 
