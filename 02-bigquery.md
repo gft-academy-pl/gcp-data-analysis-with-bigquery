@@ -144,7 +144,7 @@ Create view which Data Studio will use as a data source. Please remember to repl
   
 View returns client's turnover converted to local currency
 ```sql
-CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transactions_by_year` AS
+CREATE VIEW `{GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transactions_by_client` AS
 SELECT 
 	t.tradeDate
 	,count(*) number_of_transactions
@@ -201,28 +201,34 @@ ORDER BY publication_date desc, currency_code
 LIMIT 100"
 
 #create views
-bq query --use_legacy_sql=false "CREATE VIEW \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_client\` AS
-SELECT b.year, b.client, b.number_of_transactions, b.value_mld_PLN FROM(
-SELECT a.year, a.client, a.number_of_transactions, a.value_mld_PLN,
-ROW_NUMBER() OVER(PARTITION BY a.year ORDER BY a.value_mld_PLN DESC) tran_rank FROM(
-SELECT t.year, t.client, COUNT(*) number_of_transactions,
-ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN
+bq query --use_legacy_sql=false "CREATE VIEW \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transactions_by_client\` AS 
+SELECT 
+t.tradeDate
+,count(*) number_of_transactions
+,SUM(t.value * r.multiplier * r.avg_rate) value_PLN
+,r.currency_code
+,t.client
 FROM \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades\` AS t
-JOIN \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates\` AS r
-ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP)
-) WHERE t.region IS NOT NULL and t.status IS NOT NULL
-GROUP BY t.year, t.client) AS a
-) AS b WHERE b.tran_rank <= 10"
-
-
-bq query --use_legacy_sql=false "CREATE VIEW \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transaction_by_year_region\` AS
-SELECT t.year, t.region, count(*) number_of_transactions, 
-ROUND(SUM(t.value * r.multiplier * r.avg_rate)/1000000000, 2) value_mld_PLN
-FROM \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades\` as t
-JOIN \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates\` as r
-ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP))
-WHERE t.region IS NOT NULL and t.status IS NOT NULL
-GROUP BY t.year, t.region"
+INNER JOIN \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates\` AS r ON (t.tradeDate = CAST(r.publication_date AS TIMESTAMP))
+AND t.currency = r.currency_code
+INNER JOIN (
+SELECT 
+t.client
+,ROW_NUMBER() OVER (ORDER BY SUM(t.value * r.multiplier * r.avg_rate) DESC) transaction_rank
+FROM \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.trades\` AS t
+JOIN \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.rates\` AS r ON t.tradeDate = CAST(r.publication_date AS TIMESTAMP)
+AND t.currency = r.currency_code
+WHERE t.region IS NOT NULL
+AND t.STATUS IS NOT NULL
+GROUP BY t.client
+) top_ten ON top_ten.client = t.client
+WHERE top_ten.transaction_rank <= 10
+AND t.region IS NOT NULL
+AND t.STATUS IS NOT NULL
+GROUP BY t.tradeDate
+,t.region
+,r.currency_code
+,t.client"
 ```
 
 ## Navigation
