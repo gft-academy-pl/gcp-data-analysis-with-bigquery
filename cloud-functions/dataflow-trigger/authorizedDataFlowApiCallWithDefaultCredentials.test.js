@@ -15,7 +15,7 @@ google.auth.getClient({
 		console.log('ProjectId', projectId);
 		return index.createJob(auth, projectId, {
 			bucket: CONFIG.INPUT_BUCKET,
-			name: 'trade_2016.csv'
+			name: 'trades/trade_2016.csv'
 		}).then(result => {
 			assert.equal(result.data.type, 'JOB_TYPE_BATCH');
 			console.log('result', result.data);

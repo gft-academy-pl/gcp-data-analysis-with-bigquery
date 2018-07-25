@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require('path');
 
 const CONFIG = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json')));
+const KEY_FILE = path.join(__dirname, 'jwt.keys.json');
 
 exports.triggerDataflowFn = (event, callback) => {
 
@@ -11,13 +12,14 @@ exports.triggerDataflowFn = (event, callback) => {
 	const file = event.data;
 
 	if (file.name.startsWith('trades/trades_')) {
-      return google.auth.getClient({
-		keyFile: path.join(__dirname, 'jwt.keys.json'),
+      google.auth.getClient({
+	    keyFile: KEY_FILE,
 		scopes: [
 			'https://www.googleapis.com/auth/cloud-platform',
 			'https://www.googleapis.com/auth/userinfo.email'
 		]
 		}).then((auth) => {
+			console.log('Auth used', auth);
 			return google.auth.getDefaultProjectId()
 				.then((projectId) => {
 					console.log(`Succesfully authorized with JWT key, project: ${projectId}`);
@@ -31,9 +33,8 @@ exports.triggerDataflowFn = (event, callback) => {
 			console.log('Error during authorization', err);
 			return err;
 		});
-	} else {
-		callback();
 	}
+	callback();
 };
 
 exports.createJob = function(auth, projectId, file) {
