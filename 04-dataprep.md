@@ -20,9 +20,10 @@ Above image illustrates the most common workflow of *Cloud Dataprep* usage - dat
 It can be also described as following steps:
 
 1. **Import** - import from flat file or databases or distributed storage systems
-2. **Cleanse** - locate and remove or modify missing or mismatched data
-3. **Structure** - unnest complex data structures (ex. JSONs), merge datasets with joins
-4. **Enrich** - identify statistical outliers in your data for review and management, aggregate columnar data using a variety of aggregation functions
+2. **Explore** -  identify patterns, inconsistencies, and issues in datasets
+3. **Cleanse** - locate and remove or modify missing or mismatched data, remove duplicates
+4. **Structure** - unnest complex data structures (ex. JSONs), merge datasets with joins
+5. **Enrich** - identify statistical outliers in your data for review and management, aggregate columnar data using a variety of aggregation functions
 5. **Validate and run** - validate the data and run the job
 
 ### Import/Export - In and Out
@@ -30,18 +31,19 @@ It can be also described as following steps:
 
 #### From where it can Import?
 
-Your dataset can be imported from local storage, GCS or BigQuery in one of following formats:
-* Excel Spreadsheets (XLS, XLSX)
-* CSV
-* JSON (also nested ones!)
-* TSV
-* Avro
-* LOG
-* Plain Text
+Dataset can be imported from:
+  * local storage or Google Cloud Storage (GCS) in one of following formats:
+    * Excel Spreadsheets (XLS, XLSX)
+    * CSV/TSV
+    * JSON (also nested ones!)
+    * Avro
+    * LOG
+    * Plain Text
+  * BigQuery 
 
 #### To where it can Export? 
-* Google Cloud Storage (GCS)
-* BigQuery
+* Google Cloud Storage (GCS) - available formats: CSV/JSON/Avro; compression possible for CSV/JSON foramts
+* BigQuery - Dataprep output has to be matching with BigQuery table's schema
 
 ### Samples - Our Working Material
 
@@ -188,6 +190,10 @@ Script version:
  ```
  settype col: year type: 'Integer'
  ```
+  
+Final version of the recipe should look like below:
+
+![FinalRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/RecipeCompleted.PNG?raw=true)
 
 #### Run job.  
 Click **Run job** button (right-top corner of the editor) and provide following setting:
