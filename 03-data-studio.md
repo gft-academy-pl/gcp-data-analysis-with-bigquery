@@ -59,6 +59,8 @@ Template selection is available
 4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [transactions_by_client]** and then click **CONNECT** button to add _trades_ table to the dashboard. Review schema definition and click **ADD TO REPORT**
 5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add _rates_ table.
 
+Our goal is to draw a dashboard visible on below picture.
+
 ![FinalChart](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart_final.png?raw=true)
 
 ### Chart 1 - Cumulated number of transaction and trades value per year
