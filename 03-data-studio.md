@@ -60,6 +60,23 @@ Template selection is available
 5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add _rates_ table.
 
 ### Chart 1 - Cumulated number of transaction and trades value per year
+
+1. Select **Bar chart** from **Insert** menu. Position the crosshairs on the upper half of the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
+	* Data Source: _transactions_by_client_
+	* Date Range Dimension: _tradeDate_
+	* Dimension: _year_
+	* Metric:
+       * _SUM(value_PLN)_
+       * _SUM(number_of_transactions)_
+	* Sort: _SUM(value_PLN)_ and _Descending_
+2. Click **SUM** button near both metric names to add column aliases (**name** field):
+ 	* _SUM(value_mld_PLN)_ --> Trade Value (PLN)
+	* _SUM(number_of_transactions)_ --> Number of transactions
+3. Switch to **STYLE** pane. Turn on **Show axes** and **Double** in **Axes** section
+4. Pick **Show axis name** for both Y-Axes
+5. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated trades value and number of transaction - Top 10 clients_. In **Text Properties** pane change font size to _30px_ and use centered alignment. You can also change background color.
+
+### Chart 1 - Cumulated number of transaction and trades value per year
 	
 1. Select **Time series** from **Insert** menu. Position the crosshairs on the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
 	* Data Source: _transaction_by_year_region_
@@ -68,7 +85,26 @@ Template selection is available
        * _SUM(value_mld_PLN)_
        * _SUM(number_of_transactions)_
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
- 	* _SUM(value_mld_PLN)_ --> Trade Value (bn PLN)
+ 	* _SUM(value_mld_PLN)_ --> Trade Value (PLN)
+	* _SUM(number_of_transactions)_ --> Number of transactions
+3. Switch to **STYLE** pane. For #2 series set right-hand axis
+4. Click the **Trendline** drop-down and select **Linear** in both series
+5. Pick **Show axis name** for both Y-Axes
+6. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated number of transaction and trades value per year_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
+7. Click **VIEW** button to preview the final result
+
+
+
+### Chart 1 - Cumulated number of transaction and trades value per year
+	
+1. Select **Time series** from **Insert** menu. Position the crosshairs on the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
+	* Data Source: _transaction_by_year_region_
+	* Dimension: _year_
+	* Metric:
+       * _SUM(value_mld_PLN)_
+       * _SUM(number_of_transactions)_
+2. Click **SUM** button near both metric names to add column aliases (**name** field):
+ 	* _SUM(value_mld_PLN)_ --> Trade Value (PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
 3. Switch to **STYLE** pane. For #2 series set right-hand axis
 4. Click the **Trendline** drop-down and select **Linear** in both series
