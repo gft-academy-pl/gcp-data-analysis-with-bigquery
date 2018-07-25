@@ -56,8 +56,8 @@ Template selection is available
 1. Open Data Studio editor: https://datastudio.google.com. You are already on the Reports home page. 
 2. Click the blue plus button in the bottom right corner to create a new report. Click Untitled Report title on top of the screen and change title to GFT Academy.
 3. Click **CREATE NEW DATA SOURCE** button and select BigQuery connector panel. 
-4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [transaction_by_year_client]** and then click **CONNECT** button to add _trades_ table to the dashboard. Review schema definition and click **ADD TO REPORT**
-5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add another view: _transaction_by_year_region_.
+4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [transactions_by_client]** and then click **CONNECT** button to add _trades_ table to the dashboard. Review schema definition and click **ADD TO REPORT**
+5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add _rates_ table.
 
 ### Chart 1 - Cumulated number of transaction and trades value per year
 	
