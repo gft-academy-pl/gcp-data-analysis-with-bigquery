@@ -76,14 +76,14 @@ Template selection is available
 4. Pick **Show axis name** for both Y-Axes
 5. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated trades value and number of transaction - Top 10 clients_. In **Text Properties** pane change font size to _30px_ and use centered alignment. You can also change background color.
 
-### Chart 1 - Cumulated number of transaction and trades value per year
+### Chart 2 - FX Rate chart
 	
-1. Select **Time series** from **Insert** menu. Position the crosshairs on the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
-	* Data Source: _transaction_by_year_region_
-	* Dimension: _year_
-	* Metric:
-       * _SUM(value_mld_PLN)_
-       * _SUM(number_of_transactions)_
+1. Select **Time series** from **Insert** menu. Position the crosshairs on the bottom half of the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
+	* Data Source: _rates_
+	* Date Range Dimension: _publication_date_	
+	* Time Dimension: _publication_date_
+	* Breakdown Dimension: _currency_code_
+	* Metric: _AVG(avg_rate)_
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* _SUM(value_mld_PLN)_ --> Trade Value (PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
