@@ -59,6 +59,8 @@ Template selection is available
 4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [transactions_by_client]** and then click **CONNECT** button to add _trades_ table to the dashboard. Review schema definition and click **ADD TO REPORT**
 5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add _rates_ table.
 
+![FinalChart](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart_final.png?raw=true)
+
 ### Chart 1 - Cumulated number of transaction and trades value per year
 
 1. Select **Bar chart** from **Insert** menu. Position the crosshairs on the upper half of the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
@@ -101,8 +103,6 @@ Template selection is available
 2. Click **ABC** button near _currency_code_ dimension name to add column alias (**name** field): _Pick a currency_.
 3. Click **SUM** button near _AVG(avg_rate)_ metric name. Add column alias (**name** field): _Percent of transactions_. Change **Display as** filed to _Percent of total_
 4. Switch to **STYLE** properties pane on the right, change background and font color.
-
-![Chart2](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart2.png?raw=true)
 
 ## Navigation
 
