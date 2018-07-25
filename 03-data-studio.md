@@ -104,6 +104,14 @@ Template selection is available
 3. Click **SUM** button near _AVG(avg_rate)_ metric name. Add column alias (**name** field): _Percent of transactions_. Change **Display as** filed to _Percent of total_
 4. Switch to **STYLE** properties pane on the right, change background and font color.
 
+### Run report
+
+1. Click **VIEW** button
+2. Click **Select date range** and choose period between 2004-01-01 and 2005-06-30
+3. Click **Pick a currency**, hoover mouse over **HUF** currency and click **ONLY** button.
+
+![FinalChartSelected](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart_final_selected.png?raw=true)
+
 ## Navigation
 
 - [Previous Step](./02-bigquery.md)
