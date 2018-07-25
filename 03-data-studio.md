@@ -56,8 +56,8 @@ Template selection is available
 1. Open Data Studio editor: https://datastudio.google.com. You are already on the Reports home page. 
 2. Click the blue plus button in the bottom right corner to create a new report. Click Untitled Report title on top of the screen and change title to GFT Academy.
 3. Click **CREATE NEW DATA SOURCE** button and select BigQuery connector panel. 
-4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [trades]** and then click **CONNECT** button to add _trades_ table to the dashboard. Review schema definition and click **ADD TO REPORT**
-5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add two more views: _transaction_by_year_client_ and _transaction_by_year_region_.
+4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [transaction_by_year_client]** and then click **CONNECT** button to add _trades_ table to the dashboard. Review schema definition and click **ADD TO REPORT**
+5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add another view: _transaction_by_year_region_.
 
 ### Chart 1 - Cumulated number of transaction and trades value per year
 	
@@ -99,17 +99,6 @@ Template selection is available
 9. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _The 10 most active clients (by number of transactions)_. In **Text Properties** pane change font size to _30px_ and use centered alignment.
 
 ![Chart2](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart2.png?raw=true)
-
-**Chart 3 - number of transaction for given year - regional structure**
-1. Add new page to the report.
-2. Using `transaction_by_year_region` view, add a pie chart to the page and set following data settings:
-    * Dimension: region
-    * Data: SUM(number_of_transactions) --> Num of transations
-    * Sort by: number_of_transactions
-3. Add a control filter object to the chart and set following data settings:
-    * Dimension: year --> Pick a year
-    * Data: year
-4. Add text field and provide a title for the chart.	 
 
 ## Navigation
 
