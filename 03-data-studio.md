@@ -53,7 +53,9 @@ Template selection is available
 
 ### Add Report Data Sources
 
-1. Open Data Studio editor: https://datastudio.google.com. You are already on the Reports home page. 
+1. Open Data Studio editor: https://datastudio.google.com. Click Get started. Check the acknowledgement check box then click **ACCEPT**.
+Select _No, thanks_ on each of the questions about email alerts and market surveys then click **DONE**.
+You are already on the Reports home page. 
 2. Click the blue plus button in the bottom right corner to create a new report. Click Untitled Report title on top of the screen and change title to GFT Academy.
 3. Click **CREATE NEW DATA SOURCE** button and select BigQuery connector panel. 
 4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [transactions_by_client]** and then click **CONNECT** button to add _transactions_by_client_ view to the dashboard. Review schema definition and click **ADD TO REPORT**
