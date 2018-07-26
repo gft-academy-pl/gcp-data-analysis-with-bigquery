@@ -207,17 +207,17 @@ Final version of the recipe should look like below:
 During the first flow execution, Dataprep generates and executes Dataflow job. Our goal is to automate execution of such job with the use of Cloud Functions. 
 We need to execute Dataprep flow at least once but we don't want to gather so-called "profile details" because we want to create job template rather than load the data.
 
-Click **Run job** button (right-top corner of the editor). 
-
-Uncheck _Profile Results_ checkbox and click on the **Edit** (pencil) icon: 
+   * Click **Run job** button (right-top corner of the editor). 
+   * Uncheck _Profile Results_ checkbox and click on the **Edit** (pencil) icon: 
+   
  ![ProfileResults](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/ProfileResults.png?raw=true)
 
-In _Publishing Actions_ section change to the following: 
-   - choose a BigQuery as an target storage
-   - make sure you are in a project, you created
-   - pick a dataset _gft_academy_trades_analysis_ and then table _trades_
-   - choose _Append to this table every run_ option (right-hand side menu)
-   - click an **Update** button  
+   * In _Publishing Actions_ section change to the following: 
+	* choose a BigQuery as an target storage
+	* make sure you are in a project, you created
+ * pick a dataset _gft_academy_trades_analysis_ and then table _trades_
+	* choose _Append to this table every run_ option (right-hand side menu)
+	* click an **Update** button  
 
  ![PublishingAction](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/PublishingActions.png?raw=true)
 
