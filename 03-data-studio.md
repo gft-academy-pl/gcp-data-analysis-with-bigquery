@@ -56,7 +56,7 @@ Template selection is available
 1. Open Data Studio editor: https://datastudio.google.com. You are already on the Reports home page. 
 2. Click the blue plus button in the bottom right corner to create a new report. Click Untitled Report title on top of the screen and change title to GFT Academy.
 3. Click **CREATE NEW DATA SOURCE** button and select BigQuery connector panel. 
-4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [transactions_by_client]** and then click **CONNECT** button to add _trades_ table to the dashboard. Review schema definition and click **ADD TO REPORT**
+4. Select **[MY PROJECTS] - [{GOOGLE_CLOUD_PROJECT}] - [gft_academy_trades_analysis] - [transactions_by_client]** and then click **CONNECT** button to add _transactions_by_client_ view to the dashboard. Review schema definition and click **ADD TO REPORT**
 5. From **Resources** menu select  **Manage added data sources** and then click **ADD A DATA SOURCE**. Repeat actions described in step 4 to add _rates_ table.
 
 Our goal is to draw a dashboard visible on below picture.
@@ -68,13 +68,13 @@ Our goal is to draw a dashboard visible on below picture.
 1. Select **Bar chart** from **Insert** menu. Position the crosshairs on the upper half of the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
 	* Data Source: _transactions_by_client_
 	* Date Range Dimension: _tradeDate_
-	* Dimension: _year_
+	* Dimension: _client_
 	* Metric:
        * _SUM(value_PLN)_
        * _SUM(number_of_transactions)_
 	* Sort: _SUM(value_PLN)_ and _Descending_
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
- 	* _SUM(value_mld_PLN)_ --> Trade Value (PLN)
+ 	* _SUM(value_PLN)_ --> Trade Value (PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
 3. Switch to **STYLE** pane. Turn on **Show axes** and **Double** in **Axes** section
 4. Pick **Show axis name** for both Y-Axes
