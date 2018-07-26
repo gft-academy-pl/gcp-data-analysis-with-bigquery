@@ -152,7 +152,7 @@ Click the black section of the data quality bar below **region** column header. 
 
 Once added, missing rows in _region_ column should disappear from the data sample. Now it contains 42,352 rows.
 
-Instead of using Transformer Grid interface, above recipe can be created manualy. Let's drop newly created formula and add it again.
+Instead of using Transformer Grid interface, above recipe can be created manualy. Let's drop newly created formula first and then add it again.
  * Hover mouse over 1 **Delete rows** where ISMISSING([region]) recipe and click trashcan icon.
 
 ![RecipeDelete](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_delete_recipe.png?raw=true)
