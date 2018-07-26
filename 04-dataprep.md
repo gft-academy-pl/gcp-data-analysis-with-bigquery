@@ -141,7 +141,7 @@ Now that you have a Flow, design a data preparation recipe to clean the dataset.
  ![EditRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/EditRecipe.PNG?raw=true)
 
 #### 4. Delete all rows where _region_ values are missing.  
-Click black field on the bar below _region_ header -> _Suggestions_ window will appear on the right hand side. Click **Add** button on first suggestion (_Delete rows_) to add new transformation to the recipe.  
+Click the black section of the data quality bar below **region** column header. It will open Suggestions pane that contain data quality conditionals. Click **Add** button on first suggestion (_Delete rows with missing values in region_) to add a new transformation to the recipe.  
 
  ![HistoBlackField](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/HistoBlackField.png?raw=true)  
 
