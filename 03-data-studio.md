@@ -79,7 +79,7 @@ Our goal is to draw a dashboard visible on below picture.
  	* _SUM(value_PLN)_ --> Trade Value (PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
 3. Switch to **STYLE** pane. Make sure that **Show axes** in **Axes** section is turned on.  Pick **Double** in the same **Axes** section.
-4. Pick **Show axis name** for both Y-Axes
+4. Pick **Show axis title** for both Y-Axes
 5. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated trades value and number of transactions - Top 10 clients_. In **Text Properties** pane change font size to _30px_ and use centered alignment. You can also change background color.
 
 ### Chart 2 - FX Rate chart
