@@ -150,7 +150,7 @@ Click the black section of the data quality bar below **region** column header. 
 
  ![RegionDeleteNulls](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/RegionDeleteNulls.png?raw=true)  
 
-Once added, missing rows in _region_ column should disappear from the data sample.
+Once added, missing rows in _region_ column should disappear from the data sample. Now it contains 42,352 rows.
 
 The same can be done manually: 
  * click _Recipe_ icon (placed on the right-top corner of the editor), and then click **Add New Step** button
