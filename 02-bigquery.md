@@ -115,7 +115,7 @@ Pricing guide: https://cloud.google.com/bigquery/pricing
 ### Create `trades` table in Bigquery - import data from file.
 
 >**Create table with following BigQuery options:**  
-> ![tradesTableCreate](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/trades_table_f.PNG?raw=true)  
+> ![tradesTableCreate](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/trades_table_f.png?raw=true)  
 
 Review data in `trades` table:  
 ```sql
