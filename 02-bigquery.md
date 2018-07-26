@@ -200,7 +200,7 @@ FROM gft_academy_trades_analysis.rates
 ORDER BY publication_date desc, currency_code
 LIMIT 100"
 
-#create views
+#create view
 bq query --use_legacy_sql=false "CREATE VIEW \`${GOOGLE_CLOUD_PROJECT}.gft_academy_trades_analysis.transactions_by_client\` AS 
 SELECT 
 t.tradeDate
