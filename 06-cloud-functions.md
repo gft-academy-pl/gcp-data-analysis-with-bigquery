@@ -89,12 +89,6 @@ sed -i 's/__TEMPLATE__/'"$GCP_TEMPLATE_LOCATION"'/' ./config.json
 cat config.json
  ```
  
-### Test API call with Application Default Credentials
-
-```bash
-npm run test-auth-default
-```
-
 ### Call API with System Account via JWT
 
 ```bash
@@ -128,12 +122,6 @@ gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
 	
 gcloud projects add-iam-policy-binding ${GOOGLE_CLOUD_PROJECT} \
     --member serviceAccount:service-gft-data-analysis@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --role roles/storage.objectViewer
-```
-
-### Test with JWT
-
-```bash
-npm run test-auth-jwt
 ```
 
 ## Deploy function
