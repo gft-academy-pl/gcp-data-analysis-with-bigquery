@@ -63,7 +63,7 @@ Our goal is to draw a dashboard visible on below picture.
 
 ![FinalChart](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/DataStudio_chart_final.png?raw=true)
 
-### Chart 1 - Cumulated number of transaction and trades value per year
+### Chart 1 - Cumulated trades value and number of transactions - Top 10 clients
 
 1. Select **Bar chart** from **Insert** menu. Position the crosshairs on the upper half of the page where you want the chart to start, then draw the chart. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
 	* Data Source: _transactions_by_client_
@@ -76,7 +76,7 @@ Our goal is to draw a dashboard visible on below picture.
 2. Click **SUM** button near both metric names to add column aliases (**name** field):
  	* _SUM(value_PLN)_ --> Trade Value (PLN)
 	* _SUM(number_of_transactions)_ --> Number of transactions
-3. Switch to **STYLE** pane. Turn on **Show axes** and **Double** in **Axes** section
+3. Switch to **STYLE** pane. Make sure that **Show axes** in **Axes** section is turned on.  Pick **Double** in the same **Axes** section.
 4. Pick **Show axis name** for both Y-Axes
 5. Select **Text** from **Insert** menu and draw a rectangle across the top of the page. Provide following title for the chart: _Cumulated trades value and number of transactions - Top 10 clients_. In **Text Properties** pane change font size to _30px_ and use centered alignment. You can also change background color.
 
@@ -94,7 +94,7 @@ Our goal is to draw a dashboard visible on below picture.
 5. In **Left Y_Axis** section enable **Show axis title** and change **Custom Tick Interval** to 2
 
 ### Date range filter
-1. Select **Date range** from **Insert** menu. Position the crosshairs somwhere between both charts , then draw the rectangle. In the **STYLE** properties pane on the right, change background and font color.
+1. Select **Date range** from **Insert** menu. Position the crosshairs somwhere between both charts , then draw the rectangle. In the **STYLE** properties pane on the right, change background color and font properties (color and font size).
 
 ### Currency filter
 1. Select **Filter control** from **Insert** menu. Position the crosshairs somwhere between both charts , then draw the rectangle. In the **DATA** properties pane on the right, click on the field for each setting and change to the following:
@@ -103,8 +103,8 @@ Our goal is to draw a dashboard visible on below picture.
 	* Metric: _SUM(value_PLN)_
 	* Order: _Dimension_ and _Ascending_
 2. Click **ABC** button near _currency_code_ dimension name to add column alias (**name** field): _Pick a currency_.
-3. Click **SUM** button near _AVG(avg_rate)_ metric name. Add column alias (**name** field): _Percent of transactions_. Change **Display as** filed to _Percent of total_
-4. Switch to **STYLE** properties pane on the right, change background and font color.
+3. Click **SUM** button near _SUM(value_PLN)_ metric name. Add column alias (**name** field): _Percent of transactions_. Change **Display as** filed to _Percent of total_
+4. Switch to **STYLE** properties pane on the right, change background color and font properties (color and font size).
 
 ### Run report
 
