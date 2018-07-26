@@ -150,8 +150,8 @@ Copy datafile into the ./input/ directory.
 ```bash
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2017.csv gs://${GCP_INPUT_BUCKET}/trades/
 ```
-Check if Dataflow job is triggered. Once completed, check if data for 2017 year is available in BigQuery (`trades` table).  
-You can repeat the same for file `trades_2018.csv`.  
+Check if Dataflow job is triggered. Once completed, check if data for 2017 year is available in BigQuery (_trades_ table).  
+You can repeat the same for file _trades_2018.csv_.  
 
 ```bash
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2018.csv gs://${GCP_INPUT_BUCKET}/trades/
