@@ -215,7 +215,7 @@ We need to execute Dataprep flow at least once but we don't want to gather so-ca
    * In _Publishing Actions_ section change to the following: 
 	* choose a BigQuery as an target storage
 	* make sure you are in a project, you created
- * pick a dataset _gft_academy_trades_analysis_ and then table _trades_
+	* pick a dataset _gft_academy_trades_analysis_ and then table _trades_
 	* choose _Append to this table every run_ option (right-hand side menu)
 	* click an **Update** button  
 
