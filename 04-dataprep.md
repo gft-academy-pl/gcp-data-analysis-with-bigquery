@@ -140,6 +140,9 @@ Now that you have a Flow, design a data preparation recipe to clean the dataset.
  
  ![EditRecipe](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/EditRecipe.PNG?raw=true)
 
+Cloud Dataprep opens the Transformer Grid. This is a worksheet-like interface where you can design the steps in your data preparation recipe. When you open the Transformer Grid, Cloud Dataprep automatically profiles the contents of your dataset and generates column-level histograms and data quality indicators. This profile information can be used to guide your data preparation process.
+Initially Transformer Grid displays 17 Columns and 54,857 rows.
+
 #### 4. Delete all rows where _region_ values are missing.  
 Click the black section of the data quality bar below **region** column header. It will open Suggestions pane that contain data quality conditionals. Click **Add** button on first suggestion (_Delete rows with missing values in region_) to add a new transformation to the recipe.  
 
