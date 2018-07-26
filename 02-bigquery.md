@@ -106,7 +106,7 @@ Pricing guide: https://cloud.google.com/bigquery/pricing
 
 
 ## BigQuery - exercises
-BigQuery API is automatically enabled in new projects - check it in APIs & Services Tab. 
+BigQuery API is automatically enabled in new projects - check it in [APIs & Services Tab](https://console.cloud.google.com/apis/library/bigquery-json.googleapis.com).  
 
 * Open BigQuery UI and pick a project created.  
 	https://console.cloud.google.com/bigquery
