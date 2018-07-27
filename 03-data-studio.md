@@ -50,7 +50,7 @@ Template selection is available
 
 
 ## Exercises
-Since Data Studio is not a part of Google Cloud Console, it's language settings are independent from GCP settings. Below tutorial uses US English - please adjust your Google account language settings respectively.
+Since Data Studio is not a part of Google Cloud Console, it's language settings are independent from GCP settings. Below tutorial uses US English - please adjust your Google account language settings respectively. Changes will take effect at the user's next logon.
 
 ### Add Report Data Sources
 
