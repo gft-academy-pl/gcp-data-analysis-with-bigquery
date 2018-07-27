@@ -111,7 +111,7 @@ Pricing guide: https://cloud.google.com/bigquery/pricing
 * Open BigQuery UI and pick a project created.  
 	https://console.cloud.google.com/bigquery
     
-* In a BigQuery UI click on the project name (you can find it on the left hand side under _Resouurces_ box), then create a `gft_academy_trades_analysis` dataset using _Create Data Set_ option displayed under the _Query editor_ box. Leave the default values for location and table expiry.
+* In a BigQuery UI click on the project name (you can find it on the left hand side under _Resources_ box), then create a `gft_academy_trades_analysis` dataset using _Create Data Set_ option displayed under the _Query editor_ box. Leave the default values for location and table expiry.
 ### Create `trades` table in Bigquery - import data from file.
 
 >**Create table with following BigQuery options:**  
