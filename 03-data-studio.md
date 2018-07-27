@@ -91,6 +91,7 @@ Our goal is to draw a dashboard visible on below picture.
 	* Time Dimension: _publication_date_
 	* Breakdown Dimension: _currency_code_
 	* Metric: _AVG(avg_rate)_
+	* Breakdown dimension sort: _AVG(avg_rate)_
 2. Click **AVG** button near _AVG(avg_rate)_ metric name to add column alias (**name** field): price (PLN)
 3. Switch to **STYLE** pane. Increase **Number of series** to _20_.
 4. Set **Missing Data** to _Linear Interpolation_ in order to display missing weekend dates correctly.
