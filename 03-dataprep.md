@@ -243,6 +243,6 @@ ORDER BY year DESC
 
 ## Navigation
 
-- [Previous Step](./03-data-studio.md)
-- [Next Step](./05-dataflow.md)
+- [Previous Step](./02-bigquery.md)
+- [Next Step](./04-dataflow.md)
 
