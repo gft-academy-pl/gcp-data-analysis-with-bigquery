@@ -117,7 +117,7 @@ After processing job is done and you have checked *Profile Results* checkbox, yo
 ### Exercises
 
 #### 1. Configure Dataprep environment
-As Dataprep creates a Dataflow pipeline underneath in order to process data, enable Dafalow API using command line: `gcloud services enable dataflow.googleapis.com` or [console/UI](https://console.cloud.google.com/apis/library/dataflow.googleapis.com).  
+As Dataprep creates a Dataflow pipeline underneath in order to process data, enable Dataflow API using command line: `gcloud services enable dataflow.googleapis.com` or [console/UI](https://console.cloud.google.com/apis/library/dataflow.googleapis.com).  
 
 Launch Dataprep tool: https://console.cloud.google.com/dataprep and agree to share account information with Trifacta and allow access to project data. Click on your Google credentials to sign in. Make sure that you are still in your newly created gft academy project before you agree to create bucket for Dataprep intermediate data.
   
@@ -144,7 +144,7 @@ Cloud Dataprep opens the Transformer Grid. This is a worksheet-like interface wh
 Initially Transformer Grid displays 17 Columns and 54,857 rows.
 
 #### 4. Delete all rows where _region_ values are missing.  
-Click the black section of the data quality bar below **region** column header. It will open Suggestions pane that contain data quality conditionals. Click **Add** button on first suggestion (_Delete rows with missing values in region_) to add a new transformation to the recipe.  
+Click the black section of the data quality bar below **region** column header. It will open Suggestions pane that contains data quality conditionals. Click **Add** button on first suggestion (_Delete rows with missing values in region_) to add a new transformation to the recipe.  
 
  ![HistoBlackField](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/HistoBlackField.png?raw=true)  
 
