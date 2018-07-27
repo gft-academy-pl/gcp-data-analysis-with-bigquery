@@ -53,6 +53,12 @@ cd gcp-data-analysis-with-bigquery
 ls
 ```
 
+#### Script to get project-id
+We will be using project-id in many places - you can get it using below script.  
+```
+echo ${GOOGLE_CLOUD_PROJECT} 
+```
+
 ## Navigation
 
 - [Next Step](./01-storage.md)
