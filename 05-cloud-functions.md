@@ -165,5 +165,5 @@ gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2018.csv gs:
 
 ## Navigation
 
-- [Previous Step](./05-dataflow.md)
-- [Next Step](./07-clean-up.md)
+- [Previous Step](./04-dataflow.md)
+- [Next Step](./06-data-studio.md.md)
