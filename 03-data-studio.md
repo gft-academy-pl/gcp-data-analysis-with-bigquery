@@ -72,7 +72,7 @@ Our goal is to draw a dashboard visible on below picture.
 	* Data Source: _transactions_by_client_
 	* Date Range Dimension: _tradeDate_
 	* Dimension: _client_
-	* Metric:
+	* Metric: (use **+ Add metric here** button to extend metrics list)
        * _SUM(value_PLN)_
        * _SUM(number_of_transactions)_
 	* Sort: _SUM(value_PLN)_ and _Descending_
