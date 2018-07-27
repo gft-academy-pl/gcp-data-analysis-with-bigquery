@@ -138,7 +138,12 @@ Copy datafile into the ./input/ directory.
 ```bash
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2017.csv gs://${GCP_INPUT_BUCKET}/trades/
 ```
-Check if Dataflow job is triggered. Once completed, check if data for 2017 year is available in BigQuery (_trades_ table).  
+
+In order to check if the function was invoked, click on the link https://console.cloud.google.com/functions, and then click on the _triggerDataflowFn_ function. You should see a pick on the chart.  
+
+Click on following link https://console.cloud.google.com/dataflow to check if Dataflow job was triggered. You should see job in running status.  
+  
+Once completed, check if data for 2017 year is available in BigQuery (_trades_ table).  
 You can repeat the same for file _trades_2018.csv_.  
 
 ```bash
