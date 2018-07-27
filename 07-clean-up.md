@@ -12,4 +12,4 @@ and...
 
 ## Navigation
 
-- [Previous Step](./06-cloud-functions.md)
+- [Previous Step](./06-data-studio.md)
