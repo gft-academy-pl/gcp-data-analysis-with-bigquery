@@ -139,7 +139,7 @@ Copy datafile into the ./input/ directory.
 gsutil cp gs://gft-academy-fraud-detector-public-data/trades/trades_2017.csv gs://${GCP_INPUT_BUCKET}/trades/
 ```
 
-In order to check if the function was invoked, click on the link https://console.cloud.google.com/functions, and then click on the _triggerDataflowFn_ function. You should see a pick on the chart.  
+In order to check if the function was invoked, click on the link https://console.cloud.google.com/functions, and then click on the _triggerDataflowFn_ function. You should see a peak on the chart.  
 
 Click on following link https://console.cloud.google.com/dataflow to check if Dataflow job was triggered. You should see job in running status.  
   
