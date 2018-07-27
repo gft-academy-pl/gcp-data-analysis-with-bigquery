@@ -87,6 +87,8 @@ Using *Cloud Dataprep* we are also able to enrich our data in a simmilar manner 
 *Dataprep* gives us whole set of function to use (ex. SUM, AVERAGE, MAX etc.). We can also write our own formulas:
 
 ![Aggregating Column Example](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dataprep_aggregating-column-example.png)
+  
+_Join_ (all types), _Lookup_ and _Union_ operation are also possible.  
 
 ### Samples - Our Working Material
 
