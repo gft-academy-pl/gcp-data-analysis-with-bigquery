@@ -23,7 +23,17 @@ Features:
 - **Unified Programming Model** - Apache Beam SDK offers equally rich MapReduce-like operations, powerful data windowing, and fine-grained correctness control for streaming and batch data alike.
 - **Community-driven Innovation** - Developers wishing to extend the Cloud Dataflow programming model can fork and/or contribute to Apache Beam.
   
-Google provides set of Cloud Dataflow templates, which allow you to stage your pipelines on Cloud Storage and execute them from a variety of environments. You can use one of the Google-provided templates or create your own using Apache Beam SDK.
+Google provides set of preconfigured Cloud Dataflow templates:
+* WordCount
+* Cloud Pub/Sub to BigQuery
+* Cloud Storage Text to Cloud Pub/Sub
+* Cloud Pub/Sub to Cloud Storage Text
+* Cloud Datastore to Cloud Storage Text
+* Cloud Storage Text to BigQuery
+* Cloud Storage Text to Cloud Datastore
+* Bulk Compress Cloud Storage Files
+* Bulk Decompress Cloud Storage Files
+You can use one of them to process data or create your own pipeline using Apache Beam SDK.
 
 ## Apache Beam
 
