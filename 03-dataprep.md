@@ -45,6 +45,18 @@ Dataset can be imported from:
 * Google Cloud Storage (GCS) - available formats: CSV/JSON/Avro; compression possible for CSV/JSON foramts
 * BigQuery - Dataprep output has to be matching with BigQuery table's schema
 
+### Dataprep structure
+
+Within Cloud Dataprep, the basic unit for organizing your work is the **flow**. The following diagram illustrates the component objects of a flow and how they are related.
+
+![Flow](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Flow.PNG)
+
+A flow is a container for holding one or more imported datasets, associated recipes and other objects. This container is a means for packaging Cloud Dataprep objects for the following types of actions:
+* creating relationships between datasets, their recipes, and other datasets
+* copying
+* execution of pre-configured jobs
+* creating references between recipes and external flows
+
 ### Transformation recipe - brew your perfect data source
 
 In *Cloud Dataprep* all operations which you will be doing on raw input data are recorded as kind of recipe (literally). 
