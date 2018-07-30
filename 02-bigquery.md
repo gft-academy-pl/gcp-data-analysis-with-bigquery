@@ -12,9 +12,11 @@
 
 **Google BigQuery** is a data warehouse optimized for real-time analytics - optimized for queries that read data from denormalized tables, aggregate and filter data. It's highly scalable solution which allocates storage and query resources dynamically based on usage patterns. There is no infrastructure that needs to be managed (serverless), and you can always focus on meaningful insights derived from data analysis.
 
+![BQArchitecture](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/column%20-%20regions.png?raw=true)
+
 BigQuery is built on top of Dremel technology which has been in production internally in Google since 2006. Dremel is Google’s interactive ad-hoc query system for analysis of read-only nested data.
 
-![BQArchitecture](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/bigquery-architecture.png?raw=true)
+![BQArchitecture](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/dremel.png?raw=true)
 
 BigQuery and Dremel share the same underlying architecture. By incorporating columnar storage and tree architecture of Dremel, BigQuery offers unprecedented performance. But, BigQuery is much more than Dremel. Dremel is just an execution engine for the BigQuery. In fact, BigQuery service leverages Google’s innovative technologies like Borg, Colossus, Capacitor, and Jupiter. As illustrated above, a BigQuery client (typically BigQuery Web UI or bq command-line tool or REST APIs) interact with Dremel engine via a client interface. Borg - Google’s large-scale cluster management system - allocates the compute capacity for the Dremel jobs. Dremel jobs read data from Google’s Colossus file systems using Jupiter network, perform various SQL operations and return results to the client.
 
