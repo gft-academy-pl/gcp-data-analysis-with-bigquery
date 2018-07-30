@@ -24,15 +24,16 @@ Features:
 - **Community-driven Innovation** - Developers wishing to extend the Cloud Dataflow programming model can fork and/or contribute to Apache Beam.
   
 Google provides set of built in Cloud Dataflow templates:
-* WordCount
-* Cloud Pub/Sub to BigQuery
-* Cloud Storage Text to Cloud Pub/Sub
-* Cloud Pub/Sub to Cloud Storage Text
-* Cloud Datastore to Cloud Storage Text
-* Cloud Storage Text to BigQuery
-* Cloud Storage Text to Cloud Datastore
-* Bulk Compress Cloud Storage Files
-* Bulk Decompress Cloud Storage Files
+- WordCount
+- Cloud Pub/Sub to BigQuery
+- Cloud Storage Text to Cloud Pub/Sub
+- Cloud Pub/Sub to Cloud Storage Text
+- Cloud Datastore to Cloud Storage Text
+- Cloud Storage Text to BigQuery
+- Cloud Storage Text to Cloud Datastore
+- Bulk Compress Cloud Storage Files
+- Bulk Decompress Cloud Storage Files
+  
 You can use one of them to create a job and process your data, or you create your own pipeline using **Apache Beam SDK**.
 
 ## Apache Beam
