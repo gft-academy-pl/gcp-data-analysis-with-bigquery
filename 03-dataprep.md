@@ -52,10 +52,10 @@ Within _Cloud Dataprep_, the basic unit for organizing your work is the **flow**
 ![Flow](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Flow.PNG)
 
 A flow is a container for holding one or more imported datasets, associated recipes and other objects. This container is a means for packaging _Cloud Dataprep_ objects for the following types of actions:
-* creating relationships between datasets, their recipes, and other datasets
+* creating relationships between datasets, their transformations, and other datasets
 * copying
 * execution of pre-configured jobs
-* creating references between recipes and external flows
+* creating references to external flows
 
 ### Transformation recipe - brew your perfect data source
 
