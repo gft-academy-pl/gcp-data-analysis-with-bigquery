@@ -57,6 +57,11 @@ Typically, *Recipe* looks more or less like this:
 
 ### Working with recipies - discovering functionalities of Dataprep
 
+When a dataset is first created, **initial sample**  is created using the first set of rows of the dataset. By default, each sample is up to 10 MB, but it can be changed.
+
+The default sample is the initial sample.
+By default, each sample is 10 MB in size or the entire dataset if it's smaller.
+
 *Recipe* is basically list of instructions which will be performed on raw data one by one.
 Each step can be moved, modified or deleted at any point of your work process.
 
@@ -96,9 +101,9 @@ To prevent overwhelming the client or significantly impacting performance, *Clou
 
 *Cloud Dataprep* support serveral types of samples:
 * **First rows samples** - taken from the first set of rows in the transformed dataset based on the current cursor location in the recipe
-* **Random samples** - random selection of a subset of rows in the dataset
-* **Filter-based samples** - samples generated for the set of values taht matches provided filter criteria
-* **Anomaly-based samples** - consists of mismatched or missing data or both in one or more columns
+* **Random samples** - random selection of a subset of rows in the dataset (full-scan possible)
+* **Filter-based samples** - samples generated for the set of values taht matches provided filter criteria (full-scan possible)
+* **Anomaly-based samples** - consists of mismatched or missing data or both in one or more columns (full-scan possible)
 * **Stratified samples** - constructed from all unique values within a column and create a sample that contains the unique values, up to the sample size limit. The distribution of the column values in the sample reflects the distribution of the column values in the dataset. Sampled values are sorted by frequency, relative to the specified column.
 It can be also filtered
 * **Cluster-based samples** -  built from collection of contiguous rows in the dataset that corresponds to a random selection from the unique values in a column. All rows corresponding to the selected unique values appear in the sample, up to the maximum sample size. This sampling is useful for time-series analysis and advanced aggregations.
