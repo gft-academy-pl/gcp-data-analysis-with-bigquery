@@ -9,10 +9,9 @@
 ## Data Studio
 
 ### Concept & Purpose
+*Cloud Data Studio* is basically dashboarding and data visualization tool.
 *Cloud Data Studio* is tool to easily visualize data from one or more sources.
 It allows you to create various kinds of fully interactive reports, with few simple steps.
-
-*Cloud Data Studio* is basically visual editor for reports.
 
 ### Workflow
 
