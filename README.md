@@ -1,4 +1,4 @@
-# gcp-data-analysis-with-bigquery
+# Analyzing Big Data with Google Cloud BigQuery
 
 ![LOGO](https://raw.githubusercontent.com/gft-academy-pl/gcp-data-analysis-with-bigquery/master/assets/gft-academy.png)
 
