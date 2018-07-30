@@ -12,6 +12,10 @@
 
 **Google BigQuery** is a data warehouse optimized for real-time analytics - optimized for queries that read data from denormalized tables, aggregate and filter data. It's highly scalable solution which allocates storage and query resources dynamically based on usage patterns. There is no infrastructure that needs to be managed (serverless), and you can always focus on meaningful insights derived from data analysis.
 
+BigQuery uses columnar storage on Colossus Google file system. Each column is stored separately, queries skip reading unnecessary columns. Data are compressed and optimized for aggregations. There are no indexes, only table scans are possible (Google is currently working on so-called clustered tables where the table data is automatically organized based on the contents of one or more columns in the table's schema).
+
+Data are divided into smaller units (shards) and geo-replicated. Having data in multiple data centers enables High Availability and also helps query load balancing. Each table shard can be processed in parallel using potentially thousands of machines - each one reading individual shards. Background processes constantly look at all the stored data and check if it can be optimized even further. 
+
 ![BQArchitecture](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/column%20-%20regions.png?raw=true)
 
 BigQuery is built on top of Dremel technology which has been in production internally in Google since 2006. Dremel is Google’s interactive ad-hoc query system for analysis of read-only nested data.
