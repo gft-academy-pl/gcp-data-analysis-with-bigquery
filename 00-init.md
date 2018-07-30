@@ -24,12 +24,6 @@ When you start Cloud Shell, g1-small Google Compute Engine virtual machine runni
 
 **Remember:** _Each time Cloud Shell is restarted, you are loosing all of variables exported by you (until you put them into ~/.bashrc or ~/.bash_profile)!_
 
-### Cloud shell editor
-
-```
-cloudshell edit 00-init.md
-```
-
 ## Project overview
 
 ![Diagram](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Data%20analysis%20with%20BQ%20-%20diagram.png?raw=true)
@@ -57,6 +51,12 @@ ls
 We will be using project-id in many places - you can get it using below script.  
 ```
 echo ${GOOGLE_CLOUD_PROJECT} 
+```
+
+#### Cloud shell editor
+
+```
+cloudshell edit 00-init.md
 ```
 
 ## Navigation
