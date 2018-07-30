@@ -47,11 +47,11 @@ Dataset can be imported from:
 
 ### Dataprep structure
 
-Within Cloud Dataprep, the basic unit for organizing your work is the **flow**. The following diagram illustrates the component objects of a flow and how they are related.
+Within _Cloud Dataprep_, the basic unit for organizing your work is the **flow**. The following diagram illustrates the component objects of a flow and how they are related.
 
 ![Flow](https://github.com/gft-academy-pl/gcp-data-analysis-with-bigquery/blob/master/assets/Flow.PNG)
 
-A flow is a container for holding one or more imported datasets, associated recipes and other objects. This container is a means for packaging Cloud Dataprep objects for the following types of actions:
+A flow is a container for holding one or more imported datasets, associated recipes and other objects. This container is a means for packaging _Cloud Dataprep_ objects for the following types of actions:
 * creating relationships between datasets, their recipes, and other datasets
 * copying
 * execution of pre-configured jobs
