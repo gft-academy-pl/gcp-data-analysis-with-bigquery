@@ -10,7 +10,16 @@
 
 ### Concept & Purpose
 *Cloud Data Studio* is basically dashboarding and data visualization tool.
-*Cloud Data Studio* is tool to easily visualize data from one or more sources.
+*Cloud Data Studio* is tool to easily visualize data from one or multiple heteregenous sources:
+* Google BigQuery
+* Google Cloud SQL
+* Google Cloud Spanner
+* Google Sheets
+* CSV files
+* MySQL
+* PostgreSQL
+* Google Analytics
+* Numerous partner & open source connectors
 It allows you to create various kinds of fully interactive reports, with few simple steps.
 
 ### Workflow
