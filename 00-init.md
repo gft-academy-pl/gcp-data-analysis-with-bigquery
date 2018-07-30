@@ -56,7 +56,7 @@ echo ${GOOGLE_CLOUD_PROJECT}
 #### Cloud shell editor
 
 ```
-cloudshell edit 00-init.md
+cloudshell edit .
 ```
 
 ## Navigation
