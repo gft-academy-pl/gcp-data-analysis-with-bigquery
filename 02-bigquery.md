@@ -10,7 +10,7 @@
   
 ## BigQuery
 
-**Google BigQuery** is a highly scalable and fast data warehouse for enterprises that assist the data analysts in Big data analytics at all scales. Furthermore, Google BigQuery is a low-cost warehouse that allows data analysts to become more productive. There is no infrastructure that needs to be managed, and you can always focus on meaningful insights derived from data analysis.
+**Google BigQuery** is a data warehouse optimized for real-time analytics - optimized for queries that read data from denormalized tables, aggregate and filter data. It's highly scalable solution which allocates storage and query resources dynamically based on usage patterns. There is no infrastructure that needs to be managed (serverless), and you can always focus on meaningful insights derived from data analysis.
 
 BigQuery is built on top of Dremel technology which has been in production internally in Google since 2006. Dremel is Google’s interactive ad-hoc query system for analysis of read-only nested data.
 
