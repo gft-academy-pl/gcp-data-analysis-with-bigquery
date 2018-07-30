@@ -22,6 +22,8 @@ Features:
 - **Reliable & Consistent Exactly-once Processing** - Provides built-in support for fault-tolerant execution that is consistent and correct regardless of data size, cluster size, processing pattern or pipeline complexity.
 - **Unified Programming Model** - Apache Beam SDK offers equally rich MapReduce-like operations, powerful data windowing, and fine-grained correctness control for streaming and batch data alike.
 - **Community-driven Innovation** - Developers wishing to extend the Cloud Dataflow programming model can fork and/or contribute to Apache Beam.
+  
+Google provides set of Cloud Dataflow templates, which allow you to stage your pipelines on Cloud Storage and execute them from a variety of environments. You can use one of the Google-provided templates or create your own using Apache Beam SDK.
 
 ## Apache Beam
 
