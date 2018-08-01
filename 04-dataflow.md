@@ -12,16 +12,6 @@ Cloud Dataflow is a fully-managed service for transforming and enriching data in
 And with its serverless approach to resource provisioning and management, you have access to virtually limitless capacity to solve your biggest data processing challenges, while paying only for what you use.
 
 Cloud Dataflow is a service, which processes a data according to list of transformations listed on Dataprep's recipe. Knowing this, we can treat Cloud Dataprep tool as some kind of handy graphical user interface for Dataflow.  
-
-Features:
-- **Automated Resource Management** - Cloud Dataflow automates provisioning and management of processing resources to minimize latency and maximize utilization; no more spinning up instances by hand or reserving them.
-- **Horizontal Auto-scaling** - Horizontal auto-scaling of worker resources for optimum throughput results in better overall price-to-performance.
-- **Dynamic Work Rebalancing** - Automated and optimized work partitioning dynamically rebalances lagging work. No need to chase down “hot keys” or pre-process your input data. 
-
-![Rebalancing](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/rebalancing.png)
-- **Reliable & Consistent Exactly-once Processing** - Provides built-in support for fault-tolerant execution that is consistent and correct regardless of data size, cluster size, processing pattern or pipeline complexity.
-- **Unified Programming Model** - Apache Beam SDK offers equally rich MapReduce-like operations, powerful data windowing, and fine-grained correctness control for streaming and batch data alike.
-- **Community-driven Innovation** - Developers wishing to extend the Cloud Dataflow programming model can fork and/or contribute to Apache Beam.
   
 Google provides set of built-in Cloud Dataflow templates:
 - WordCount
@@ -35,6 +25,17 @@ Google provides set of built-in Cloud Dataflow templates:
 - Bulk Decompress Cloud Storage Files
   
 You can use one of them to create a job and process your data, or you create your own pipeline using **Apache Beam SDK**.
+  
+Features:
+- **Automated Resource Management** - Cloud Dataflow automates provisioning and management of processing resources to minimize latency and maximize utilization; no more spinning up instances by hand or reserving them.
+- **Horizontal Auto-scaling** - Horizontal auto-scaling of worker resources for optimum throughput results in better overall price-to-performance.
+- **Dynamic Work Rebalancing** - Automated and optimized work partitioning dynamically rebalances lagging work. No need to chase down “hot keys” or pre-process your input data. 
+
+![Rebalancing](https://raw.githubusercontent.com/gft-academy-pl/gcp-anti-fraud-detector/master/assets/rebalancing.png)
+- **Reliable & Consistent Exactly-once Processing** - Provides built-in support for fault-tolerant execution that is consistent and correct regardless of data size, cluster size, processing pattern or pipeline complexity.
+- **Unified Programming Model** - Apache Beam SDK offers equally rich MapReduce-like operations, powerful data windowing, and fine-grained correctness control for streaming and batch data alike.
+- **Community-driven Innovation** - Developers wishing to extend the Cloud Dataflow programming model can fork and/or contribute to Apache Beam.
+  
 
 ## Apache Beam
 
